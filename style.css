@@ -1,44 +1,69 @@
 body {
-    font-family: 'Mulish', sans-serif;
-    font-family: 'Nunito', sans-serif;
-    background-color: #f7f7f7;
+	font-family: "Mulish", sans-serif;
+	font-family: "Nunito", sans-serif;
+	background-color: #f7f7f7;
 }
 
 #canvas-container {
-    position: relative;
+	position: relative;
 }
 
 h1 {
-    font-family: 'Mulish';
-    font-size: 4em;
-    text-align: center;
-    color: #000;
+	font-family: "Mulish";
+	font-size: 4em;
+	text-align: center;
+	color: #000;
 }
 
 h2 {
-    font-family: 'Mulish';
-    font-size: 2em;
-    color: #EFFFE9;
-
+	font-family: "Mulish";
+	font-size: 3em;
+	text-align: center;
+	color: #011627;
+	text-transform: uppercase;
+}
+h3 {
+	font-family: "Mulish";
+	font-size: 1.3em;
+	line-height: 2em;
+	text-align: center;
+	color: #011627;
+	font-weight: 400;
+	margin-left: 4em;
+	margin-right: 4em;
 }
 
 p {
-    font-family: 'Mulish';
-    font-size: 1em;
-    color: #EFFFE9;
-
+	font-family: "Mulish";
+	font-size: 2em;
+	color: #011627;
+	flex-grow: 1;
+	border: 3px;
+	border-color: #011627;
+	text-align: center;
+	padding: 2em;
+}
+.explanation {
+	display: flex;
+	flex-direction: row;
+}
+#history {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .parallax {
-    background-color:#9FC7CF repeat fixed 100%;
-    background-size: cover;
+	background-color: #000 repeat fixed 100%;
+	background-size: cover;
 }
-.parallax-inner{
-    padding-top: 20%;
-    padding-bottom: 20%;
+.parallax-inner {
+	padding-top: 10%;
+	padding-bottom: 20%;
 }
-.parallax-1{
-    background: url('https://images.pexels.com/photos/3369569/pexels-photo-3369569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') repeat fixed 100%;
-    background-size: cover;
-    color: aliceblue;
+.parallax-1 {
+	background: url("https://images.pexels.com/photos/3369569/pexels-photo-3369569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+		repeat fixed 100%;
+	background-size: cover;
+	color: aliceblue;
 }

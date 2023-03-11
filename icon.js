@@ -3,7 +3,7 @@
 let canvas;
 function setup() {
 	canvas = document.getElementById("myCanvas");
-	var rander = createCanvas(windowWidth, 800);
+	var rander = createCanvas(windowWidth, 600);
 	rander.parent("canvas-container");
 	// resizeCanvas(windowWidth, 800);
 	rectMode(CENTER);
