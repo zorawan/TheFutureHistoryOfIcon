@@ -20,13 +20,26 @@ const correctResult = {
 	scan: 0,
 	sdCard: 0,
 	translation: 0,
+	profile: 0,
+	link: 0,
+	bluetooth: 0,
+	usb: 0,
+	thermometer: 0,
+	database: 0,
+	message: 0,
+	bookmark: 0,
+	rate: 0,
+	power: 0,
+	setting: 0,
+	share: 0,
+	desktop: 0,
 };
 
 fs.createReadStream("survey.csv")
 	.pipe(csv())
 	.on("data", (data) => {
 		results.push(data);
-		if (/edit/i.test(data.icon_edit)) {
+		if (/edit|editing|pen|pencil/i.test(data.icon_edit)) {
 			correctResult["edit"] += 1;
 		}
 		if (/calendar/i.test(data.icon_calendar)) {
@@ -41,7 +54,7 @@ fs.createReadStream("survey.csv")
 		if (/folder/i.test(data.icon_folder)) {
 			correctResult["folder"] += 1;
 		}
-		if (/hourglass/i.test(data.icon_hourGlass)) {
+		if (/hourglass|loading/i.test(data.icon_hourGlass)) {
 			correctResult["hourGlass"] += 1;
 		}
 		if (/(image|photo|picture)/i.test(data.icon_image)) {
@@ -76,6 +89,60 @@ fs.createReadStream("survey.csv")
 		}
 		if (/(translation|translate|translating)/i.test(data.icon_translation)) {
 			correctResult["translation"] += 1;
+		}
+	})
+	.on("end", () => {
+		console.log(correctResult) + "," + correctResult;
+		const totalCount = results.length;
+		for (const key in correctResult) {
+			var percentage = (correctResult[key] / totalCount) * 100;
+			console.log(key + ": " + percentage);
+		}
+	});
+
+// survey2
+fs.createReadStream("survey2.csv")
+	.pipe(csv())
+	.on("data", (data) => {
+		results.push(data);
+		if (/profile/i.test(data.icon_profile)) {
+			correctResult["profile"] += 1;
+		}
+		if (/link/i.test(data.icon_link)) {
+			correctResult["link"] += 1;
+		}
+		if (/bluetooth/i.test(data.icon_bluetooth)) {
+			correctResult["bluetooth"] += 1;
+		}
+		if (/usb/i.test(data.icon_usb)) {
+			correctResult["usb"] += 1;
+		}
+		if (/thermometer/i.test(data.icon_thermometer)) {
+			correctResult["thermometer"] += 1;
+		}
+		if (/database|data/i.test(data.icon_database)) {
+			correctResult["database"] += 1;
+		}
+		if (/(message|chat)/i.test(data.icon_message)) {
+			correctResult["message"] += 1;
+		}
+		if (/(bookmark)/i.test(data.icon_bookmark)) {
+			correctResult["bookmark"] += 1;
+		}
+		if (/(rate|rating)/i.test(data.icon_rate)) {
+			correctResult["rate"] += 1;
+		}
+		if (/(power|power on|power off)/i.test(data.icon_power)) {
+			correctResult["power"] += 1;
+		}
+		if (/(setting|gear|tool)/i.test(data.icon_setting)) {
+			correctResult["setting"] += 1;
+		}
+		if (/(share)/i.test(data.icon_share)) {
+			correctResult["share"] += 1;
+		}
+		if (/(desktop|computer)/i.test(data.icon_desktop)) {
+			correctResult["desktop"] += 1;
 		}
 	})
 	.on("end", () => {
