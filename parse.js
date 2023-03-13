@@ -20,6 +20,10 @@ const correctResult = {
 	scan: 0,
 	sdCard: 0,
 	translation: 0,
+};
+
+const results2 = [];
+const correctResult2 = {
 	profile: 0,
 	link: 0,
 	bluetooth: 0,
@@ -39,13 +43,13 @@ fs.createReadStream("survey.csv")
 	.pipe(csv())
 	.on("data", (data) => {
 		results.push(data);
-		if (/edit|editing|pen|pencil/i.test(data.icon_edit)) {
+		if (/edit|editing|pen|pencil|write|Writing/i.test(data.icon_edit)) {
 			correctResult["edit"] += 1;
 		}
 		if (/calendar/i.test(data.icon_calendar)) {
 			correctResult["calendar"] += 1;
 		}
-		if (/attachment/i.test(data.icon_attachment)) {
+		if (/attachment|attach|clip/i.test(data.icon_attachment)) {
 			correctResult["attachment"] += 1;
 		}
 		if (/accessibility/i.test(data.icon_accessibility)) {
@@ -54,40 +58,46 @@ fs.createReadStream("survey.csv")
 		if (/folder/i.test(data.icon_folder)) {
 			correctResult["folder"] += 1;
 		}
-		if (/hourglass|loading/i.test(data.icon_hourGlass)) {
+		if (
+			/hourglass|hour glass|loading|wait|waiting|load time/i.test(
+				data.icon_hourGlass
+			)
+		) {
 			correctResult["hourGlass"] += 1;
 		}
-		if (/(image|photo|picture)/i.test(data.icon_image)) {
+		if (/image|photo|picture|Pictures|images|pics/i.test(data.icon_image)) {
 			correctResult["image"] += 1;
 		}
-		if (/(language)/i.test(data.icon_language)) {
+		if (/globe|language/i.test(data.icon_language)) {
 			correctResult["language"] += 1;
 		}
-		if (/(more|three dots|3 dots)/i.test(data.icon_more)) {
+		if (/more|three dots|dots|Menu|dropdown/i.test(data.icon_more)) {
 			correctResult["more"] += 1;
 		}
-		if (/(notification|bell)/i.test(data.icon_notification)) {
+		if (/notification|bell|alert|alarm/i.test(data.icon_notification)) {
 			correctResult["notification"] += 1;
 		}
-		if (/(phone|call|call back)/i.test(data.icon_phone)) {
+		if (/phone|call|call back/i.test(data.icon_phone)) {
 			correctResult["phone"] += 1;
 		}
-		if (/(printer|print|printing)/i.test(data.icon_printer)) {
+		if (/printer|print|printing/i.test(data.icon_printer)) {
 			correctResult["printer"] += 1;
 		}
-		if (/(refresh|refreshing|reload|reset)/i.test(data.icon_refresh)) {
+		if (/refresh|refreshing|reload|reset|re-load/i.test(data.icon_refresh)) {
 			correctResult["refresh"] += 1;
 		}
-		if (/(piggyBank|save money|saving)/i.test(data.icon_piggyBank)) {
+		if (/piggyBank|save money|saving|money/i.test(data.icon_piggyBank)) {
 			correctResult["piggyBank"] += 1;
 		}
-		if (/(scan|scanning)/i.test(data.icon_scan)) {
+		if (/scan|scanning|QR Code/i.test(data.icon_scan)) {
 			correctResult["scan"] += 1;
 		}
-		if (/(sd card|memory)/i.test(data.icon_sdCard)) {
+		if (/sd card|memory|save/i.test(data.icon_sdCard)) {
 			correctResult["sdCard"] += 1;
 		}
-		if (/(translation|translate|translating)/i.test(data.icon_translation)) {
+		if (
+			/translation|translate|translating|language/i.test(data.icon_translation)
+		) {
 			correctResult["translation"] += 1;
 		}
 	})
@@ -104,52 +114,52 @@ fs.createReadStream("survey.csv")
 fs.createReadStream("survey2.csv")
 	.pipe(csv())
 	.on("data", (data) => {
-		results.push(data);
-		if (/profile/i.test(data.icon_profile)) {
-			correctResult["profile"] += 1;
+		results2.push(data);
+		if (/person|profile|user|account/i.test(data.icon_profile)) {
+			correctResult2["profile"] += 1;
 		}
 		if (/link/i.test(data.icon_link)) {
-			correctResult["link"] += 1;
+			correctResult2["link"] += 1;
 		}
 		if (/bluetooth/i.test(data.icon_bluetooth)) {
-			correctResult["bluetooth"] += 1;
+			correctResult2["bluetooth"] += 1;
 		}
-		if (/usb/i.test(data.icon_usb)) {
-			correctResult["usb"] += 1;
+		if (/usb|Flash drive/i.test(data.icon_usb)) {
+			correctResult2["usb"] += 1;
 		}
-		if (/thermometer/i.test(data.icon_thermometer)) {
-			correctResult["thermometer"] += 1;
+		if (/thermometer|temperature/i.test(data.icon_thermometer)) {
+			correctResult2["thermometer"] += 1;
 		}
-		if (/database|data/i.test(data.icon_database)) {
-			correctResult["database"] += 1;
+		if (/database|data|Storage/i.test(data.icon_database)) {
+			correctResult2["database"] += 1;
 		}
-		if (/(message|chat)/i.test(data.icon_message)) {
-			correctResult["message"] += 1;
+		if (/message|Messages|messaging|chat|Chatting/i.test(data.icon_message)) {
+			correctResult2["message"] += 1;
 		}
-		if (/(bookmark)/i.test(data.icon_bookmark)) {
-			correctResult["bookmark"] += 1;
+		if (/bookmark|save/i.test(data.icon_bookmark)) {
+			correctResult2["bookmark"] += 1;
 		}
-		if (/(rate|rating)/i.test(data.icon_rate)) {
+		if (/rate|rating/i.test(data.icon_rate)) {
 			correctResult["rate"] += 1;
 		}
-		if (/(power|power on|power off)/i.test(data.icon_power)) {
-			correctResult["power"] += 1;
+		if (/power|power on|power off|Power on\/off/i.test(data.icon_power)) {
+			correctResult2["power"] += 1;
 		}
-		if (/(setting|gear|tool)/i.test(data.icon_setting)) {
-			correctResult["setting"] += 1;
+		if (/setting|gear|tool/i.test(data.icon_setting)) {
+			correctResult2["setting"] += 1;
 		}
-		if (/(share)/i.test(data.icon_share)) {
-			correctResult["share"] += 1;
+		if (/share/i.test(data.icon_share)) {
+			correctResult2["share"] += 1;
 		}
-		if (/(desktop|computer)/i.test(data.icon_desktop)) {
-			correctResult["desktop"] += 1;
+		if (/desktop|computer|PC/i.test(data.icon_desktop)) {
+			correctResult2["desktop"] += 1;
 		}
 	})
 	.on("end", () => {
-		console.log(correctResult) + "," + correctResult;
+		console.log(correctResult2) + "," + correctResult2;
 		const totalCount = results.length;
-		for (const key in correctResult) {
-			var percentage = (correctResult[key] / totalCount) * 100;
+		for (const key in correctResult2) {
+			var percentage = (correctResult2[key] / totalCount) * 100;
 			console.log(key + ": " + percentage);
 		}
 	});
