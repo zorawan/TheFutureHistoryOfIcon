@@ -55,14 +55,7 @@ p {
 	display: flex;
 	flex-direction: row;
 }
-.iconGrid {
-	display: flex;
-	flex-flow: column wrap;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	margin: 1em 2em 1em 2em;
-}
+
 img {
 	padding: 20px;
 }
@@ -103,7 +96,6 @@ footer {
 }
 
 .section-title-underlay {
-	color: red;
 	font-size: 3em;
 	position: fixed;
 	left: 50%;
@@ -112,5 +104,28 @@ footer {
 	text-transform: uppercase;
 	top: 2em;
 	transform: translate(-50%, -50%);
+	opacity: 1;
+}
+.section-detail-underlay {
+	font-size: 1.3em;
+	line-height: 2em;
+	position: fixed;
+	left: 50%;
+	text-align: center;
+	color: #05171b;
+	top: 12em;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+}
+.iconGrid {
+	position: fixed;
+	left: 10%;
+	top: 30em;
+	display: flex;
+	flex-flow: column wrap;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin: 1em 2em 1em 2em;
+	transform: translate(0%, 0%);
 	opacity: 1;
 }
