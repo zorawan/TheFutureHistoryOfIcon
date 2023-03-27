@@ -19,7 +19,7 @@ h2 {
 	font-family: "Mulish";
 	font-size: 3em;
 	text-align: center;
-	color: #011627;
+	color: #05171b;
 	text-transform: uppercase;
 }
 h3 {
@@ -27,25 +27,44 @@ h3 {
 	font-size: 1.3em;
 	line-height: 2em;
 	text-align: center;
-	color: #011627;
+	color: #05171b;
 	font-weight: 400;
 	margin-left: 4em;
 	margin-right: 4em;
 }
+h4 {
+	font-family: "Mulish";
+	font-size: 2em;
+	color: #05171b;
+	flex-grow: 1;
+	border: 3px;
+	border-color: #05171b;
+	text-align: center;
+}
 
 p {
 	font-family: "Mulish";
-	font-size: 2em;
-	color: #011627;
+	font-size: 1em;
+	color: #05171b;
 	flex-grow: 1;
 	border: 3px;
-	border-color: #011627;
+	border-color: #05171b;
 	text-align: center;
-	padding: 2em;
 }
 .explanation {
 	display: flex;
 	flex-direction: row;
+}
+.iconGrid {
+	display: flex;
+	flex-flow: column wrap;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin: 1em 2em 1em 2em;
+}
+img {
+	padding: 20px;
 }
 #history {
 	display: flex;
@@ -58,11 +77,18 @@ p {
 	background-size: cover;
 }
 .parallax-inner {
-	padding-top: 10%;
+	/* padding-top: 10%; */
 	padding-bottom: 20%;
 }
 .parallax-1 {
 	background: url("icon factory.png") repeat fixed 100%;
 	background-size: cover;
 	color: aliceblue;
+}
+div.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 1em;
+	background-color: #f7f7f7;
+	/* padding: 40px; */
 }
