@@ -17,13 +17,17 @@ function draw() {
 	var top = 20;
 	var gap = 320;
 	drawBlock(left, top, windowWidth / 20 - 3, 30);
+	fill(255, 255, 255, 0.8);
+	noStroke();
+	rect(100, height - 320, windowWidth, 100);
+	fill("#05171b");
 	textSize(72);
 	textStyle(BOLD);
 	textFont("Mulish");
 	text("The Future History Of Icon", 120, height - 300);
-	fill("#05171B");
-	stroke("#fff");
-	strokeWeight(6);
+
+	// stroke("#fff");
+	// strokeWeight(6);
 }
 
 // drawBlock draws a a grid of animated shapes
@@ -39,9 +43,9 @@ function drawBlock(left, top, colCount, rowCount) {
 		for (var y = 0; y < rowCount; y++) {
 			noStroke();
 			fill(
-				noise(frameCount / 100 + x * colCount + y) * 10 + 104,
-				noise(frameCount / 100 + x * colCount + y) * 30,
-				noise(frameCount / 100 + x * colCount + y) * 180
+				noise(frameCount / 100 + x * colCount + y) * 10 + 68,
+				noise(frameCount / 100 + x * colCount + y) * 100,
+				noise(frameCount / 100 + x * colCount + y) * 100
 			);
 			rect(
 				20 * x,
