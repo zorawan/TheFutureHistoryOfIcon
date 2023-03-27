@@ -1,6 +1,6 @@
 body {
-	font-family: "Mulish", sans-serif;
 	font-family: "Nunito", sans-serif;
+	font-family: "Mulish", sans-serif;
 	background-color: #f7f7f7;
 }
 
@@ -91,4 +91,26 @@ div.sticky {
 	top: 1em;
 	background-color: #f7f7f7;
 	/* padding: 40px; */
+}
+
+section {
+	border-bottom: 1px solid red;
+	height: 400px;
+}
+
+footer {
+	height: 800px;
+}
+
+.section-title-underlay {
+	color: red;
+	font-size: 3em;
+	position: fixed;
+	left: 50%;
+	text-align: center;
+	color: #05171b;
+	text-transform: uppercase;
+	top: 2em;
+	transform: translate(-50%, -50%);
+	opacity: 1;
 }
