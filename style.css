@@ -29,8 +29,8 @@ h3 {
 	text-align: center;
 	color: #05171b;
 	font-weight: 400;
-	margin-left: 4em;
-	margin-right: 4em;
+	margin-left: 10em;
+	margin-right: 10em;
 }
 h4 {
 	font-family: "Mulish";
@@ -128,3 +128,12 @@ footer {
 	fill: "currentColor";
 	opacity: 1;
 }
+/* .tooltip-container {
+	position: absolute;
+	display: none;
+	width: 100px;
+	height: 50px;
+	background-color: white;
+	border: 1px solid black;
+	padding: 5px;
+} */
