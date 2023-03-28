@@ -23,12 +23,12 @@ var data = [
 	{ name: "Profile", count: 39200 },
 	{ name: "Comment", count: 13393 },
 	{ name: "Desktop", count: 12222 },
-	{ name: "Memory", count: 7511 },
+	{ name: "USB", count: 8891 },
 	{ name: "Refresh", count: 12176 },
-	{ name: "Edit", count: 22229 },
+	{ name: "Edit", count: 22409 },
 	{ name: "Phone CallBack", count: 23 },
 	{ name: "SD Card", count: 1570 },
-	{ name: "Language", count: 5388 },
+	{ name: "Language", count: 5415 },
 	{ name: "Hourglass", count: 4444 },
 	{ name: "Database", count: 21468 },
 	{ name: "Saving", count: 7362 },
@@ -38,7 +38,7 @@ var data = [
 	{ name: "Attache file", count: 931 },
 	{ name: "Link", count: 11322 },
 	{ name: "Translate", count: 674 },
-	{ name: "Language", count: 10907 },
+	{ name: "More", count: 10457 },
 	{ name: "Accessibility", count: 1228 },
 	{ name: "Bluetooth", count: 3493 },
 	{ name: "Setting", count: 26449 },
@@ -70,7 +70,7 @@ data.sort(function (b, a) {
 var x = d3
 	.scaleBand()
 	.range([0, chartWidth])
-	.padding(0.3)
+	.padding(0.4)
 	.domain(
 		data.map(function (d) {
 			return d.name;
@@ -101,7 +101,7 @@ svg
 	.call(xAxis)
 	.selectAll("text")
 	.style("font-size", "16px")
-	.attr("transform", "translate(-10,0)rotate(-45)")
+	.attr("transform", "translate(10,0)rotate(-45)")
 	.style("text-anchor", "end");
 
 svg

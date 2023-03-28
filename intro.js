@@ -39,6 +39,50 @@ for (var i = 0; i < images.length; i++) {
 	// Use template literals to create the img tag
 	imgs += `<img src="${images[i].src}" alt="${images[i].alt}" class="ske"/>`;
 }
+
+var images_g = [
+	{ src: "listIcons/accessibility_g.svg", alt: "accessibility", class: "ske" },
+	{ src: "listIcons/account_g.svg", alt: "account", class: "uni" },
+	{ src: "listIcons/attach_file_g.svg", alt: "attach file", class: "ai_sku" },
+	{ src: "listIcons/bluetooth_g.svg", alt: "bluetooth", class: "ske" },
+	{ src: "listIcons/bookmark_g.svg", alt: "bookmark", class: "ske" },
+	{ src: "listIcons/comment_g.svg", alt: "comment", class: "ske" },
+	{ src: "listIcons/database_g.svg", alt: "database", class: "ske" },
+	{ src: "listIcons/desktop_g.svg", alt: "desktop", class: "ske" },
+	{ src: "listIcons/edit_g.svg", alt: "edit", class: "ske" },
+	{ src: "listIcons/event_g.svg", alt: "event", class: "ske" },
+	{ src: "listIcons/folder_g.svg", alt: "folder", class: "ske" },
+	{ src: "listIcons/hourglass_g.svg", alt: "hourglass", class: "ske" },
+	{ src: "listIcons/image_g.svg", alt: "image", class: "ske" },
+	{ src: "listIcons/language_g.svg", alt: "language", class: "ske" },
+	{ src: "listIcons/link_g.svg", alt: "link", class: "ske" },
+	{ src: "listIcons/memory_g.svg", alt: "memory", class: "ske" },
+	{ src: "listIcons/more_g.svg", alt: "more", class: "ske" },
+	{ src: "listIcons/notifications_g.svg", alt: "notifications", class: "ske" },
+	{
+		src: "listIcons/phone_callback_g.svg",
+		alt: "phone callback",
+		class: "ske",
+	},
+	{ src: "listIcons/power_g.svg", alt: "power", class: "ske" },
+	{ src: "listIcons/print_g.svg", alt: "print", class: "ske" },
+	{ src: "listIcons/refresh_g.svg", alt: "refresh", class: "ske" },
+	{ src: "listIcons/savings_g.svg", alt: "savings", class: "ske" },
+	{ src: "listIcons/scan_g.svg", alt: "scan", class: "ske" },
+	{ src: "listIcons/sd_card_g.svg", alt: "sd card", class: "ske" },
+	{ src: "listIcons/settings_g.svg", alt: "settings", class: "ske" },
+	{ src: "listIcons/share_g.svg", alt: "share", class: "ske" },
+	{ src: "listIcons/star_g.svg", alt: "star", class: "ske" },
+	{ src: "listIcons/thermometer_g.svg", alt: "thermometer", class: "ske" },
+	{ src: "listIcons/translate_g.svg", alt: "translate", class: "ske" },
+];
+
+var imgs_g = "";
+for (var i = 0; i < images_g.length; i++) {
+	// Use template literals to create the img tag
+	imgs_g += `<img src="${images_g[i].src}" alt="${images[i].alt}"/>`;
+}
+
 // Concatenate the img tags together
 
 $(document).ready(function () {
@@ -54,7 +98,7 @@ $(document).ready(function () {
 		var footer = $("footer").offset().top - compensation;
 		var scrollPos = $(document).scrollTop();
 
-		// Apply text changes
+		// Apply changes
 		if (scrollPos >= second && scrollPos < third) {
 			$(".section-title-underlay").text("UNIVERSAL ICON");
 			$(".section-detail-underlay").text(
@@ -63,7 +107,7 @@ $(document).ready(function () {
 			$(".iconGrid").empty();
 			$(".iconGrid").css("position", "fixed");
 			$(".iconGrid").append(imgs);
-			$(".ske").css("fill", "#ff0000");
+			$(".ske").replaceWith(imgs_g);
 		} else if (scrollPos >= third && scrollPos < fourth) {
 			$(".section-title-underlay").text("SKEUOMORPHISM");
 			$(".section-detail-underlay").text(
@@ -91,3 +135,23 @@ $(document).ready(function () {
 		}
 	}); // close scroll function
 }); // close document ready
+
+var tooltip = d3
+	.select("body")
+	.append("div")
+	.attr("class", "tooltip")
+	.style("opacity", 0);
+// Add mouseover event listener to each rect element
+d3.selectAll("rect")
+	.on("mouseover", function (d) {
+		// Set tooltip content and position
+		tooltip
+			.html("This is a " + d3.select(this).attr("fill") + " rectangle.")
+			.style("left", d3.event.pageX + "px")
+			.style("top", d3.event.pageY + "px")
+			.style("opacity", 1);
+	})
+	.on("mouseout", function (d) {
+		// Hide the tooltip
+		tooltip.style("opacity", 0);
+	});
