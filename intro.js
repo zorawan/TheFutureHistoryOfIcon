@@ -2,11 +2,11 @@ var images = [
 	{ src: "listIcons/accessibility.svg", alt: "accessibility", class: "ske" },
 	{ src: "listIcons/account.svg", alt: "account", class: "uni" },
 	{ src: "listIcons/attach_file.svg", alt: "attach file", class: "ai_sku" },
-	{ src: "listIcons/bluetooth.svg", alt: "bluetooth", class: "ske" },
-	{ src: "listIcons/bookmark.svg", alt: "bookmark", class: "ske" },
+	{ src: "listIcons/bluetooth.svg", alt: "bluetooth", class: "uni" },
+	{ src: "listIcons/bookmark.svg", alt: "bookmark", class: "uni" },
 	{ src: "listIcons/comment.svg", alt: "comment", class: "ske" },
-	{ src: "listIcons/database.svg", alt: "database", class: "ske" },
-	{ src: "listIcons/desktop.svg", alt: "desktop", class: "ske" },
+	{ src: "listIcons/database.svg", alt: "database", class: "uni" },
+	{ src: "listIcons/desktop.svg", alt: "desktop", class: "uni" },
 	{ src: "listIcons/edit.svg", alt: "edit", class: "ske" },
 	{ src: "listIcons/event.svg", alt: "event", class: "ske" },
 	{ src: "listIcons/folder.svg", alt: "folder", class: "ske" },
@@ -116,7 +116,7 @@ $(document).ready(function () {
 			$(".iconGrid").empty();
 			$(".iconGrid").css("position", "fixed");
 			$(".iconGrid").append(imgs);
-			$(".ske").css("fill", "#ffffff");
+			$(".ai").replaceWith(imgs_g);
 		} else if (scrollPos >= fourth && scrollPos < footer) {
 			$(".section-title-underlay").text("AI & NEW TECHNOLOGIES");
 			$(".section-detail-underlay").text(
@@ -125,7 +125,7 @@ $(document).ready(function () {
 			$(".iconGrid").empty();
 			$(".iconGrid").css("position", "fixed");
 			$(".iconGrid").append(imgs);
-			$(".ske").css("fill", "#ff0000");
+			$(".ske").replaceWith(imgs_g);
 		} else {
 			$(".section-title-underlay").text("") &&
 				$(".section-detail-underlay").text("");
