@@ -12,7 +12,7 @@ h1 {
 	font-family: "Mulish";
 	font-size: 4em;
 	text-align: center;
-	color: #000;
+	color: #05171b;
 }
 
 h2 {
@@ -133,12 +133,39 @@ footer {
 }
 .img_tooltip {
 	width: 200px;
-
 	border: 3px solid #000;
 	border-radius: 6px;
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 /* .tooltipImages {
 	max-width: 100%;
 	max-height: 100%;
 	object-fit: contain;
 } */
+.tip_title {
+	font-family: "Mulish";
+	font-weight: 700;
+	font-size: 1.6em;
+	line-height: 1.6em;
+	text-align: left;
+	color: #05171b;
+}
+.description_tooltip {
+	font-family: "Mulish";
+	font-weight: 400;
+	font-size: 1em;
+	text-align: left;
+	line-height: 1.6em;
+	color: #05171b;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.desc {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 6px;
+	border: #e9eeef;
+}
