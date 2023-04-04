@@ -64,7 +64,7 @@ var images_g = [
 	{ src: "listIcons/image_g.svg", alt: "image" },
 	{ src: "listIcons/language_g.svg", alt: "language" },
 	{ src: "listIcons/link_g.svg", alt: "link" },
-	{ src: "listIcons/usb.svg", alt: "usb" },
+	{ src: "listIcons/usb_g.svg", alt: "usb" },
 	{ src: "listIcons/more_g.svg", alt: "more" },
 	{ src: "listIcons/notifications_g.svg", alt: "notifications" },
 	{ src: "listIcons/phone_callback_g.svg", alt: "phone_callback" },
@@ -84,7 +84,8 @@ var images_g = [
 var imgs_g = "";
 for (var i = 0; i < images_g.length; i++) {
 	imgs_g += `<img src="${images_g[i].src}" alt="${images_g[i].alt}"  
-			   onmouseenter="showImgTip(event, this)"
+			   onmouseenter="showImgTip(event, this)" 
+			   onmouseout="$(this).css('background-color', '#f7f7f7'); $('.img_tooltip').hide(); $('.description_tooltip').hide();"
 			/>`;
 }
 
@@ -175,8 +176,8 @@ var platformArray = [
 		desc: ["Google Material Icon", "Apple SF Symbols"],
 	},
 	{
-		name: "Setting",
-		alt: "setting",
+		name: "Settings",
+		alt: "settings",
 		desc: ["Google Material Icon", "IBM Carbon Design", "Microsoft Fluent UI"],
 	},
 	{
@@ -325,17 +326,18 @@ function showImgTip(event, img) {
 			if (imageObj.alt === tooltipImages[j]) {
 				tooltipImgs += `<img src="${
 					"tooltipImages/" + tooltipImages[j]
-				}.png" class="${tooltipImages[j]}"/>`;
+				}.png" class="${tooltipImages[j]}" id="skeTool"/>`;
 			}
 		}
 		$(".img_tooltip").html(tooltipImgs);
 		$(".img_tooltip").show();
+		$(img).css("background-color", "#EBECEC");
 		// get the mouse position relative to the viewport
 		var mouseX = event.clientX;
 		var mouseY = event.clientY;
 		var tip = $(".img_tooltip")[0];
-		tip.style.left = mouseX - 100 + "px";
-		tip.style.top = mouseY - 200 + "px";
+		tip.style.left = mouseX + 40 + "px";
+		tip.style.top = mouseY - 250 + "px";
 	} else if (currentStatus == "ai" || currentStatus == "uni") {
 		$(".description_tooltip").hide();
 		var altText = $(img).attr("alt");
@@ -345,45 +347,29 @@ function showImgTip(event, img) {
 				var desc;
 				if (currentStatus == "uni") {
 					//change here for universal icon layout
-					desc = `<div class="desc"><div class="tip_title">${descObj.name}</div><div>platforms using the same shape:</div><div>${descObj.desc}</div></div>`;
+					desc = `<div class="desc"><div class="tip_title"> ${descObj.name} </div><div class="highlightTag">platforms using the same shape</div><div>${descObj.desc}</div></div>`;
 				} else {
-					desc = `<div class="desc"><div class="tip_title">${descObj.name}</div><div>Reason:</div><div>${descObj.desc}</div></div>`;
+					desc = `<div class="desc"><div class="tip_title">${descObj.name}</div><div class="highlightTag">Reason</div><div>${descObj.desc}</div></div>`;
 				}
-
+				$(img).css("background-color", "#EBECEC");
 				$(".description_tooltip").html(desc);
 				$(".description_tooltip").show();
 				var tip = $(".description_tooltip")[0];
 				var mouseX = event.clientX;
 				var mouseY = event.clientY;
-				tip.style.left = mouseX - 100 + "px";
-				tip.style.top = mouseY - 200 + "px";
+				tip.style.left = mouseX + 40 + "px";
+				tip.style.top = mouseY - 250 + "px";
 				break;
 			}
 		}
 	}
 }
-// function hideImgTip() {
-// 	// Find the existing image tooltip element
-// 	var tooltipImgs = "";
-// 	for (var j = 0; j < tooltipImages.length; j++) {
-// 		if (imageObj.alt === tooltipImages[j]) {
-// 			tooltipImgs += `<img src="${
-// 				"tooltipImages/" + tooltipImages[j]
-// 			}.png" class="${tooltipImages[j]}"/>`;
-// 		}
-// 	}
-
-// 	// If the tooltip exists, hide it
-// 	if (tooltipImgs) {
-// 		tooltip.style.display = "none";
-// 	}
-// }
 
 $(document).ready(function () {
 	var compensation = 0;
 	// var compensation = $(window).height() / 2;
 	// calculate where the sections start
-	var second = $(".second").offset().top - compensation;
+	var second = $(".second").offset().top - compensation + 100;
 	var third = $(".third").offset().top - compensation;
 	var fourth = $(".fourth").offset().top - compensation;
 	var footer = $("footer").offset().top - compensation;

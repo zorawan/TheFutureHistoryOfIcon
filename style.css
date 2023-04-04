@@ -61,6 +61,22 @@ img {
 	max-width: 100%;
 	max-height: 100%;
 	object-fit: contain;
+	background-color: #f7f7f7;
+}
+.img_tooltip {
+	width: 300px;
+	height: auto;
+	position: fixed;
+}
+#skeTool {
+	width: 300px;
+	height: auto;
+	background-color: #fff;
+	border: 1px solid #e9eeef;
+	border-radius: 12px;
+	box-shadow: 0px 20px 30px rgba(5, 23, 27, 0.2);
+	top: 0;
+	left: 0;
 }
 #history {
 	display: flex;
@@ -94,7 +110,7 @@ section {
 }
 
 footer {
-	height: 200px;
+	height: 20px;
 }
 
 .section-title-underlay {
@@ -126,38 +142,29 @@ footer {
 	flex-flow: column wrap;
 	flex-direction: row;
 	justify-content: flex-start;
-	margin: 1em 2em 1em 2em;
+	margin: 1em 4em 1em 4em;
 	/* transform: translate(0%, 0%); */
 	fill: "currentColor";
 	opacity: 1;
 }
-.img_tooltip {
-	width: 200px;
-	border: 3px solid #000;
-	border-radius: 6px;
-	position: fixed;
-	top: 0;
-	left: 0;
-}
-/* .tooltipImages {
-	max-width: 100%;
-	max-height: 100%;
-	object-fit: contain;
-} */
+
 .tip_title {
 	font-family: "Mulish";
-	font-weight: 700;
+	font-weight: 1000;
 	font-size: 1.6em;
 	line-height: 1.6em;
 	text-align: left;
 	color: #05171b;
+	background-color: #dbff00;
+	display: inline-block;
+	font-style: italic;
 }
 .description_tooltip {
 	font-family: "Mulish";
-	font-weight: 400;
-	font-size: 1em;
+	font-weight: 300;
+	font-size: 1.3em;
 	text-align: left;
-	line-height: 1.6em;
+	line-height: 2em;
 	color: #05171b;
 	position: fixed;
 	top: 0;
@@ -166,6 +173,33 @@ footer {
 .desc {
 	background-color: #fff;
 	padding: 20px;
-	border-radius: 6px;
-	border: #e9eeef;
+	border-radius: 12px;
+	border: 1px solid #e9eeef;
+	box-shadow: 0px 20px 30px rgba(5, 23, 27, 0.2);
+	max-width: 30rem;
+}
+.highlightTag {
+	font-family: "Mulish";
+	font-weight: 800;
+	font-size: 0.8em;
+	text-align: left;
+	line-height: 2.4em;
+}
+/* Define the animation using keyframes */
+@keyframes scroll-color {
+	0% {
+		color: #ffc530;
+	}
+	50% {
+		color: #dbff00;
+	}
+	100% {
+		color: #40ffaf;
+	}
+}
+
+/* Apply the animation to the text */
+.scroll-color {
+	animation: scroll-color 5s linear infinite;
+	font-weight: 1000;
 }

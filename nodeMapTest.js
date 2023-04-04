@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 				.append("circle")
 				.attr("r", 20)
 				.style("fill", "#69b3a2");
-			var node1 = svg.data(data.nodes[0]).selectAll("circle").attr("r", 50);
+
 			console.log(data.nodes[0]);
 
 			// Let's list the force we wanna apply on the network
