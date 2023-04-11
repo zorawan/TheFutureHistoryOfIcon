@@ -13,6 +13,8 @@ h1 {
 	font-size: 4em;
 	text-align: center;
 	color: #05171b;
+	margin-left: 4em;
+	margin-right: 4em;
 }
 
 h2 {
@@ -21,6 +23,8 @@ h2 {
 	text-align: center;
 	color: #05171b;
 	text-transform: uppercase;
+	margin-left: 4em;
+	margin-right: 4em;
 }
 h3 {
 	font-family: "Mulish";
@@ -40,6 +44,8 @@ h4 {
 	border: 3px;
 	border-color: #05171b;
 	text-align: center;
+	margin-left: 10em;
+	margin-right: 10em;
 }
 
 p {
@@ -50,6 +56,17 @@ p {
 	border: 3px;
 	border-color: #05171b;
 	text-align: center;
+	margin-left: 10em;
+	margin-right: 10em;
+}
+
+.barTip {
+	font-family: "Mulish";
+	font-size: 1.2em;
+	font-weight: 500;
+	line-height: 2.4em;
+	color: #05171b;
+	text-align: left;
 }
 .explanation {
 	display: flex;

@@ -120,16 +120,22 @@ var tooltip = d3
 	.style("position", "absolute")
 	.style("background-color", "#f7f7f7")
 	.style("padding", 20 + "px")
-	.style("border-radius", 4 + "px");
+	.style("border-radius", 6 + "px")
+	.style("border", 1 + "px" + "solid #e9eeef")
+	.style("box-shadow", "0px 20px 30px rgba(5, 23, 27, 0.2)");
 
-// Define the tooltip function
 function showTooltip(d) {
+	// Format the count value with commas
+	var countWithCommas = d.count.toLocaleString();
+
 	// Update the content of the tooltip
 	tooltip
 		.html(
-			"<strong>Count:</strong> <span style='color:#102B32'>" +
-				d.count +
-				"</span>"
+			"<div class='barTip'>" +
+				d.name +
+				"</div><div class='barTip'>Count: <span><strong>" +
+				countWithCommas +
+				"</strong></span></div>"
 		)
 		.style("left", d3.event.pageX + 25 + "px")
 		.style("top", d3.event.pageY - 25 + "px")

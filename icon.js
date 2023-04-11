@@ -16,10 +16,8 @@ function draw() {
 	var left = 20;
 	var top = 20;
 	var gap = 320;
-	drawBlock(left, top, windowWidth / 20 - 3, 30);
-	fill(255, 255, 255, 0.8);
-	noStroke();
-	rect(100, height - 320, windowWidth, 100);
+	drawBlock(left, top, windowWidth / 50, 30);
+
 	fill("#05171b");
 	textSize(72);
 	textStyle(BOLD);
@@ -48,8 +46,8 @@ function drawBlock(left, top, colCount, rowCount) {
 				noise(frameCount / 100 + x * colCount + y) * 100
 			);
 			rect(
-				20 * x,
-				20 * y,
+				80 * x,
+				80 * y,
 				noise(frameCount / 10 + x * colCount + y) * 20, // width
 				noise(frameCount / 10 + x * colCount + y) * 20, // height
 				noise(frameCount / 50 + x * colCount + y) * 20 // corner radius
