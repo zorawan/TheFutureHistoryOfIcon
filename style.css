@@ -44,8 +44,8 @@ h4 {
 	border: 3px;
 	border-color: #05171b;
 	text-align: center;
-	margin-left: 10em;
-	margin-right: 10em;
+	margin-left: 8em;
+	margin-right: 8em;
 }
 
 p {
@@ -202,21 +202,34 @@ footer {
 	text-align: left;
 	line-height: 2.4em;
 }
-/* Define the animation using keyframes */
-@keyframes scroll-color {
-	0% {
-		color: #ffc530;
-	}
-	50% {
-		color: #dbff00;
-	}
-	100% {
-		color: #40ffaf;
+
+@keyframes rainbow-animation {
+	to {
+		background-position: 4500vh;
 	}
 }
 
-/* Apply the animation to the text */
 .scroll-color {
-	animation: scroll-color 5s linear infinite;
 	font-weight: 1000;
+	background-image: linear-gradient(
+		to right,
+		#f899a3,
+		#ffbb63,
+		#dbff00,
+		#53f4b6,
+		#abd0d6,
+		#8957f4,
+		#f899a3
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: rainbow-animation 300s linear infinite;
+}
+#end {
+	height: 60vh;
+	background-color: #e9eeef;
+	padding-top: 1vh;
+	text-align: left;
+	font-size: 1.3em;
+	font-weight: 500;
 }

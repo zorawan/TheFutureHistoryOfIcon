@@ -41,9 +41,12 @@ function drawBlock(left, top, colCount, rowCount) {
 		for (var y = 0; y < rowCount; y++) {
 			noStroke();
 			fill(
-				noise(frameCount / 100 + x * colCount + y) * 10 + 68,
-				noise(frameCount / 100 + x * colCount + y) * 100,
-				noise(frameCount / 100 + x * colCount + y) * 100
+				random(frameCount / 2 + 360),
+				88,
+				65
+
+				// noise(frameCount / 100 + x * colCount + y) * 100,
+				// noise(frameCount / 100 + x * colCount + y) * 100
 			);
 			rect(
 				80 * x,
