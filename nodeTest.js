@@ -1,144 +1,141 @@
-// Define the data
-var data = [
-	"connect",
-	"save life",
-	"an individual",
-	"accessibility",
-	"i don't know, maybe accessibility?",
-	"i don't know ",
-	"hug",
-	"giving a hug?",
-	"person, help",
-	"hug",
-	"help,men's toilet",
-	"hug",
-	"person",
-	"hug me",
-	"person open arms",
-	"?",
-	"not sure",
-	"person",
-	"accessibility ",
-	"person",
-	"people",
-	"i don't know lolll",
-	"man",
-	"people",
-	"accssible",
-	"hug",
-	"people",
-	"adults and kids ",
-	"account",
-	"more information",
-	"people",
-	"user",
-	"human, hug, community",
-	"i did not see the icon before ",
-	"hug",
-	"person",
-	"people ",
-	"people",
-	"a guy",
-	"parental guide?, for kids?",
-	"profile",
-	"accessibility",
-	"not sure, guessing (profile page button), men’s bathroom ",
-	"i don’t know",
-	"person, user, friend ",
-	"stop ",
-	"-",
-	"不知道😂 no idea",
-	"little man",
-	"person",
-	"team?",
-	"no idea",
-	"夜色下的人、陽光下的人 person",
-	"gymnastics",
-	"ballet stand",
-	"user ",
-	"person",
-	"potentially accessibility but usually see with a circle",
-	"person, represents user,profile",
-	"person",
-	"person",
-	"person? hug?",
-	"profile",
-	"-",
-	"i don't know",
-	"hug",
-	"i don't know",
-	"accessibility",
-	"accessibility?",
-	"child",
-	"hug",
-	"hug",
-	"child? parent?",
-	"accessibility",
-	"? ",
-	"safe space",
-	"human",
-	"all the things, forum of people, hugz",
-	"hug?",
-	"hug",
-	"i don't know",
-	"child",
-	"person",
-	"people",
+function prepareData(json, key, iconName) {
+	var result = [
+		{
+			id: 1,
+			name: iconName,
+			size: 0,
+		},
+	];
+	var index = 1;
+	var total = 0;
+	json.map((item) => {
+		if (item.hasOwnProperty(key)) {
+			var values = item[key];
+			var valueArr = values.toLowerCase().split(",");
+			for (var value of valueArr) {
+				var cleanValue = value.trim();
+				var found = false;
+				for (let i = 0; i < result.length; i++) {
+					//change this line to aggeregate similar answers
+					if (result[i].name === cleanValue) {
+						result[i].size += 1;
+						found = true;
+						break;
+					}
+				}
+				if (!found) {
+					index++;
+					var newItem = {
+						id: index,
+						name: cleanValue,
+						size: 1,
+					};
+					result.push(newItem);
+				}
+			}
+			total++;
+		}
+	});
+	var formattedResult = { total: total };
+	formattedResult[iconName] = result;
+	var links = [];
+	for (var i = 1; i < index + 1; i++) {
+		var link = {
+			source: 1,
+			target: i,
+		};
+		links.push(link);
+	}
+	formattedResult["links"] = links;
+	return formattedResult;
+}
+
+var list = [
+	{
+		id: "icon_edit",
+		name: "Edits",
+	},
+	{
+		id: "icon_profile",
+		name: "Profile",
+	},
 ];
 
-// Define a dictionary to keep track of the word count
-var count = {};
+document.addEventListener("DOMContentLoaded", function (e) {
+	var width = 200,
+		height = 200;
 
-// Loop through the data and count the number of times each word appears
-data.forEach(function (word) {
-	if (count[word]) {
-		count[word]++;
-	} else {
-		count[word] = 1;
-	}
+	d3.json("survey.json", function (data) {
+		var container = d3.select("#main_node");
+
+		var tooltip = container
+			.append("div")
+			.attr("class", "node_tooltip")
+			.style("opacity", 0);
+
+		for (var i = 0; i < list.length; i++) {
+			var svg = container
+				.append("svg")
+				.attr("width", width)
+				.attr("height", height);
+			var editResult = prepareData(data, list[i].id, list[i].name);
+			console.log(editResult);
+			var nodes = editResult[list[i].name]
+				.sort(function (a, b) {
+					return b.size - a.size; // sort nodes by size in descending order
+				})
+				.map(function (d) {
+					return { radius: d.size * 2, name: d.name };
+				});
+			var simulation = d3
+				.forceSimulation(nodes)
+				.force("charge", d3.forceManyBody().strength(5))
+
+				.force("center", d3.forceCenter(width / 2, height / 2))
+				.force(
+					"collision",
+					d3.forceCollide().radius(function (d) {
+						return d.radius;
+					})
+				)
+				.on("tick", ticked);
+
+			var circles = svg
+				.selectAll("circle")
+				.data(nodes)
+				.enter()
+				.append("circle")
+				.attr("r", function (d) {
+					return d.radius;
+				})
+				.attr("fill", function (d, i) {
+					return i === 0 ? "#21383E" : d3.hsl(Math.random() * 360, 0.8, 0.65);
+				})
+
+				.on("mouseover", function (d) {
+					// show tooltip on mouseover
+					tooltip.transition().duration(200).style("opacity", 0.9);
+					tooltip
+
+						.html(d.name)
+						.style("left", d3.event.pageX + 10 + "px")
+						.style("top", d3.event.pageY - 28 + "px");
+				})
+
+				.on("mouseout", function (d) {
+					// hide tooltip on mouseout
+					tooltip.transition().duration(500).style("opacity", 0);
+				});
+
+			function ticked() {
+				circles
+					.attr("cx", function (d) {
+						return d.x;
+					})
+					.attr("cy", function (d) {
+						return d.y;
+					});
+			}
+		}
+	});
 });
-
-// Define the width and height of the SVG element
-var width = 600;
-var height = 400;
-
-// Define the color scale for the nodes
-var color = d3.scaleOrdinal(d3.schemeCategory10);
-
-// Define the force simulation
-var simulation = d3
-	.forceSimulation()
-	.force(
-		"link",
-		d3.forceLink().id(function (d) {
-			return d.id;
-		})
-	)
-	.force("charge", d3.forceManyBody().strength(-100))
-	.force("center", d3.forceCenter(width / 2, height / 2));
-
-// Create the SVG element
-var svg = d3
-	.select("body")
-	.append("svg")
-	.attr("width", width)
-	.attr("height", height);
-
-// Create the nodes from the word count dictionary
-var nodes = d3.entries(count).map(function (d) {
-	return {
-		id: d.key,
-		count: d.value,
-	};
-});
-
-// Create the links between the nodes
-var links = d3.range(nodes.length - 1).map(function (d) {
-	return {
-		source: d,
-		target: d + 1,
-	};
-});
-
-// Create the link elements
-var link = svg.selectAll(".link").data(links);
