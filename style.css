@@ -8,58 +8,61 @@ body {
 	position: relative;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+p {
 	font-family: "Mulish";
-	font-size: 4em;
-	text-align: center;
 	color: #05171b;
-	margin-left: 4em;
-	margin-right: 4em;
+	text-align: center;
+}
+
+h1 {
+	font-size: 4em;
+	margin: 0 4em;
 }
 
 h2 {
-	font-family: "Mulish";
 	font-size: 3em;
-	text-align: center;
-	color: #05171b;
 	text-transform: uppercase;
-	margin-left: 4em;
-	margin-right: 4em;
+	margin: 0 4em;
 }
+
 h3 {
-	font-family: "Mulish";
 	font-size: 1.3em;
 	line-height: 2em;
-	text-align: center;
-	color: #05171b;
 	font-weight: 400;
-	margin-left: 10em;
-	margin-right: 10em;
+	margin: 0 10em;
 }
+
 h4 {
-	font-family: "Mulish";
-	font-size: 2em;
-	color: #05171b;
+	font-size: 1.3em;
 	flex-grow: 1;
-	border: 3px;
-	border-color: #05171b;
-	text-align: center;
-	margin-left: 8em;
-	margin-right: 8em;
 }
 
 p {
-	font-family: "Mulish";
 	font-size: 1em;
-	color: #05171b;
 	flex-grow: 1;
-	border: 3px;
-	border-color: #05171b;
-	text-align: center;
+	margin: 0 10em;
+}
+ol {
+	text-align: left;
+	font-size: 1.3em;
+	line-height: 2em;
+	color: #c1db29;
+	font-weight: bold;
 	margin-left: 10em;
 	margin-right: 10em;
 }
-
+.listDetail {
+	text-align: left;
+	font-size: 1em;
+	line-height: 2em;
+	font-weight: 400;
+	margin-left: 0em;
+	margin-right: 0em;
+}
 .barTip {
 	font-family: "Mulish";
 	font-size: 1.2em;
@@ -68,11 +71,6 @@ p {
 	color: #05171b;
 	text-align: left;
 }
-.explanation {
-	display: flex;
-	flex-direction: row;
-}
-
 img {
 	padding: 20px;
 	max-width: 100%;
@@ -96,9 +94,9 @@ img {
 	left: 0;
 }
 #history {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	/* display: flex; */
+	align-items: left;
+	/* justify-content: center; */
 }
 
 .parallax {
@@ -226,10 +224,28 @@ footer {
 	animation: rainbow-animation 300s linear infinite;
 }
 #end {
-	height: 60vh;
+	height: 30vh;
 	background-color: #e9eeef;
 	padding-top: 1vh;
 	text-align: left;
 	font-size: 1.3em;
 	font-weight: 500;
+}
+.node_tooltip {
+	position: absolute;
+	font-family: "Mulish";
+	font-size: 1.2em;
+	font-weight: 500;
+	line-height: 2.4em;
+	color: #05171b;
+	text-align: left;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 12px;
+	border: 1px solid #e9eeef;
+	box-shadow: 0px 20px 30px rgba(5, 23, 27, 0.2);
+	max-width: 30rem;
+}
+canvas {
+	display: block;
 }

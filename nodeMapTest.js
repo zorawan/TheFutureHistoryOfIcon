@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			.attr("dx", function (d) {
 				return d.normalizedSize + 5;
 			})
-			.attr("dy", "1.5em")
+			.attr("dy", "em")
 			.text(function (d) {
 				return d.name;
 			})
