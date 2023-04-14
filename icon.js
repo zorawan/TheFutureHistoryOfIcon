@@ -78,7 +78,7 @@ class Particle {
 	}
 
 	draw() {
-		fill(this.color, 80, 60);
+		fill(this.color, 88, 70);
 		circle(this.x, this.y, this.r * 2);
 		// if(Math.abs(this.x - this.originalX) > 400){
 		//     ctx.beginPath();
@@ -158,6 +158,9 @@ function draw() {
 	background("#f7f7f7");
 	updating();
 	drawParticles();
+	textFont("Mulish", [60]);
+	textStyle(BOLD);
+	text("The Future History Of", window.innerWidth / 2 - 300, 200);
 }
 
 function mouseDragged() {}

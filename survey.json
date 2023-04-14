@@ -1296,7 +1296,7 @@
    "icon_printer": "printer",
    "icon_refresh": "refresh, cycle, restart",
    "icon_piggyBank": "piggy bank",
-   "icon_scan": "I dont know",
+   "icon_scan": "I don't know",
    "icon_sdCard": "SMS chip? ",
    "icon_translation": "translation",
    "age": "45 - 54"
@@ -1812,7 +1812,7 @@
   "icon_bluetooth": "Bluetooth",
   "icon_usb": "USB",
   "icon_thermometer": "Temperature ",
-  "icon_database": "I dont know",
+  "icon_database": "I don't know",
   "icon_message": "Chat",
   "icon_bookmark": "Save",
   "icon_rate": "star",
@@ -2261,7 +2261,7 @@
   "icon_power": "open, close, power",
   "icon_setting": "settings",
   "icon_share": "share",
-  "icon_desktop": "i dont't know",
+  "icon_desktop": "i don't't know",
   "age": "25 - 34"
 },
 {
