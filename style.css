@@ -30,7 +30,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1.3em;
+	font-size: 1.2em;
 	line-height: 2em;
 	font-weight: 400;
 	text-align: left;
@@ -57,7 +57,7 @@ h3 {
 	box-shadow: -10px -20px 20px rgba(255, 255, 255, 0.9),
 		0px 20px 20px rgba(5, 23, 27, 0.1);
 	border-radius: 20px;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	line-height: 2em;
 	width: 280px;
 }
@@ -68,21 +68,21 @@ h3 {
 	font-weight: 800;
 }
 h4 {
-	font-size: 1.3em;
+	font-size: 1.2em;
 	text-align: center;
 	font-weight: 700;
-	line-height: 2.6em;
+	line-height: 2.4em;
 }
 
 p {
-	font-size: 1.3em;
+	font-size: 1.2em;
 	text-align: left;
 }
 
 .tag {
-	font-size: 1.3em;
+	font-size: 1.2em;
 	font-weight: 700;
-	line-height: 2.6em;
+	line-height: 2.4em;
 	color: #05171b;
 	background: #dbff00;
 	padding: 0em 1.4em;
@@ -179,6 +179,7 @@ footer {
 
 .section-title-underlay {
 	font-size: 3em;
+	font-weight: 700;
 	position: fixed;
 	left: 50%;
 	text-align: center;
@@ -226,7 +227,7 @@ footer {
 .description_tooltip {
 	font-family: "Mulish";
 	font-weight: 300;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	text-align: left;
 	line-height: 2em;
 	color: #05171b;
@@ -277,7 +278,7 @@ footer {
 	background-color: #e9eeef;
 	padding-top: 1vh;
 	text-align: left;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	font-weight: 500;
 }
 .node_tooltip {
