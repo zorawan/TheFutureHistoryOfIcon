@@ -158,6 +158,7 @@ function draw() {
 	background("#f7f7f7");
 	updating();
 	drawParticles();
+	fill("#05171b");
 	textFont("Mulish", [60]);
 	textStyle(BOLD);
 	text("The Future History Of", window.innerWidth / 2 - 300, 200);

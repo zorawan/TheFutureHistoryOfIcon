@@ -1,15 +1,3 @@
-// var NounProject = require("the-noun-project"),
-// 	nounProject = new NounProject({
-// 		key: "3408dfacebf94462bd367d1bf329216c",
-// 		secret: "3e8eb6412bbc4361bad1ce154b948911",
-// 	});
-
-// nounProject.getIconsByTerm("folder", function (err, data) {
-// 	if (!err) {
-// 		console.log(data.icons.length);
-// 	}
-// });
-
 // Data for the chart
 var data = [
 	{ name: "Print", count: 10907 },
@@ -44,10 +32,30 @@ var data = [
 	{ name: "Setting", count: 26449 },
 ];
 
+function getMiddleItem(arr) {
+	const sortedData = arr.sort((a, b) => a.count - b.count);
+	console.log(sortedData);
+	const middleIndex = Math.floor(sortedData.length / 2 - 1);
+	return sortedData[middleIndex];
+}
+
+function getAverage(arr) {
+	let sum = 0;
+	for (let i = 0; i < arr.length; i++) {
+		sum += arr[i].count;
+	}
+
+	let average = sum / arr.length;
+	return average;
+}
+
+const middleObject = getMiddleItem(data);
+const meanNumber = getAverage(data);
+
 var nounElement = document.getElementById("noun");
 var svgWidth = window.innerWidth;
-var svgHeight = 460;
-var margin = { top: 20, right: 120, bottom: 100, left: 120 };
+var svgHeight = 800;
+var margin = { top: 20, right: 120, bottom: 200, left: 200 };
 var chartWidth = svgWidth - margin.left - margin.right;
 var chartHeight = svgHeight - margin.top - margin.bottom;
 // Set up the SVG element and chart dimensions
@@ -67,19 +75,19 @@ data.sort(function (b, a) {
 });
 
 // Set up the scales
-var x = d3
+var y = d3
 	.scaleBand()
-	.range([0, chartWidth])
-	.padding(0.4)
+	.range([margin.top, chartHeight])
+	.padding(0.6)
 	.domain(
 		data.map(function (d) {
 			return d.name;
 		})
 	);
 
-var y = d3
+var x = d3
 	.scaleLinear()
-	.range([chartHeight, 0])
+	.range([0, chartWidth])
 	.domain([
 		0,
 		d3.max(data, function (d) {
@@ -88,7 +96,7 @@ var y = d3
 	]);
 
 // Set up the axes
-var xAxis = d3.axisBottom(x);
+var xAxis = d3.axisBottom(x).tickSize(0);
 var yAxis = d3.axisLeft(y);
 
 // Add the axes to the chart
@@ -99,17 +107,69 @@ svg
 		"translate(" + margin.left + "," + (chartHeight + margin.top) + ")"
 	)
 	.call(xAxis)
+
 	.selectAll("text")
 	.style("font-size", "16px")
-	.attr("transform", "translate(10,0)rotate(-45)")
-	.style("text-anchor", "end");
+	.style("font-family", "Mulish")
+	.attr("transform", "translate(0,10)")
+	.style("text-anchor", "middle");
 
 svg
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 	.call(yAxis)
 	.selectAll("text")
-	.style("font-size", "16px");
+	.style("font-size", "16px")
+	.style("font-family", "Mulish")
+	.style("text-anchor", "end");
+
+// Add mean lines
+svg
+	.append("line")
+	.style("stroke", "#C1DB29")
+	.style("stroke-width", "2px")
+	.attr("x1", x(meanNumber) + margin.left)
+	.attr("y1", margin.top)
+	.attr("x2", x(meanNumber) + margin.left)
+	.attr("y2", svgHeight - margin.bottom);
+// Draw the label for the mean
+svg
+	.append("text")
+	.attr("text-anchor", "start")
+	.style("font-size", "16px")
+	.style("font-family", "Mulish")
+	.attr("x", x(meanNumber) + margin.left + 10)
+	.attr("y", svgHeight - margin.bottom - 10)
+	// .attr("dominant-baseline", "ideographic")
+	.text("Mean: " + meanNumber.toFixed(0));
+
+// Handmade legend
+svg
+	.append("circle")
+	.attr("cx", 200)
+	.attr("cy", chartHeight + margin.top + 70)
+	.attr("r", 6)
+	.style("fill", "rgba(5, 23, 27, 0.5)");
+svg
+	.append("circle")
+	.attr("cx", 200)
+	.attr("cy", chartHeight + margin.top + 100)
+	.attr("r", 6)
+	.style("fill", "rgba(5, 23, 27)");
+svg
+	.append("text")
+	.attr("x", 220)
+	.attr("y", chartHeight + margin.top + 70)
+	.text("Above the Median")
+	.style("font-size", "15px")
+	.attr("alignment-baseline", "middle");
+svg
+	.append("text")
+	.attr("x", 220)
+	.attr("y", chartHeight + margin.top + 100)
+	.text("Below the Median")
+	.style("font-size", "15px")
+	.attr("alignment-baseline", "middle");
 
 // Add the tooltip to the chart
 var tooltip = d3
@@ -118,7 +178,7 @@ var tooltip = d3
 	.attr("class", "tooltip")
 	.style("opacity", 0)
 	.style("position", "absolute")
-	.style("background-color", "#f7f7f7")
+	.style("background-color", "#fff")
 	.style("padding", 20 + "px")
 	.style("border-radius", 6 + "px")
 	.style("border", 1 + "px" + "solid #e9eeef")
@@ -133,9 +193,9 @@ function showTooltip(d) {
 		.html(
 			"<div class='barTip'>" +
 				d.name +
-				"</div><div class='barTip'>Count: <span><strong>" +
+				"</div><div class='barTipCount'>Count: " +
 				countWithCommas +
-				"</strong></span></div>"
+				"</div>"
 		)
 		.style("left", d3.event.pageX + 25 + "px")
 		.style("top", d3.event.pageY - 25 + "px")
@@ -155,17 +215,23 @@ chart
 	.enter()
 	.append("rect")
 	.attr("class", "bar")
-	.style("fill", "#102B32")
+	.style("fill", function (d) {
+		if (d.count >= middleObject.count) {
+			return "rgba(5, 23, 27, 0.5)";
+		} else {
+			return "rgba(5, 23, 27, 1)";
+		}
+	})
 	.attr("x", function (d) {
-		return x(d.name);
+		return x(0);
 	})
 	.attr("y", function (d) {
-		return y(d.count);
+		return y(d.name);
 	})
-	.attr("height", function (d) {
-		return chartHeight - y(d.count);
+	.attr("width", function (d) {
+		return x(d.count);
 	})
-	.attr("width", x.bandwidth())
+	.attr("height", y.bandwidth())
 	.on("mouseover", function (d) {
 		showTooltip(d);
 	})

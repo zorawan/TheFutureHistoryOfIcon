@@ -389,7 +389,7 @@ $(document).ready(function () {
 			$(".iconGrid").append(imgs);
 			$("img.uni").replaceWith(function () {
 				var index = $(this).index("img");
-				return $(imgs_g).eq(index);
+				return $(imgs_g).eq(index - 1);
 			});
 			currentStatus = "uni";
 		} else if (scrollPos >= third && scrollPos < fourth) {
@@ -402,7 +402,7 @@ $(document).ready(function () {
 			$(".iconGrid").append(imgs);
 			$("img.ske").replaceWith(function () {
 				var index = $(this).index("img");
-				return $(imgs_g).eq(index);
+				return $(imgs_g).eq(index - 1);
 			});
 			currentStatus = "ske";
 		} else if (scrollPos > fourth && scrollPos < footer) {
@@ -415,7 +415,7 @@ $(document).ready(function () {
 			$(".iconGrid").append(imgs);
 			$("img.ai").replaceWith(function () {
 				var index = $(this).index("img");
-				return $(imgs_g).eq(index);
+				return $(imgs_g).eq(index - 1);
 			});
 			currentStatus = "ai";
 		} else {
