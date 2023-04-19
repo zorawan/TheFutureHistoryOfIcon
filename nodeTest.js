@@ -1,3 +1,9 @@
+let width = window.innerWidth;
+let height = 2600;
+let margins = { top: 100, right: 60, bottom: 100, left: 60 };
+let totalWidth = width - margins.left - margins.right;
+let totalHeight = height - margins.top - margins.bottom;
+
 function prepareData(json, list) {
 	var result = [];
 	for (var i = 0; i < list.length; i++) {
@@ -33,37 +39,20 @@ function prepareData(json, list) {
 				return b.size - a.size; // sort nodes by size in descending order
 			})
 			.map(function (d) {
-				var nodeUnitX = window.innerWidth / 5;
-				var nodeUnitY = 2600 / 6;
+				var nodeUnitX = totalWidth / 5;
+				var nodeUnitY = totalHeight / 6;
 				var row = Math.floor(i / 5);
 				var col = i % 5;
 				return {
-					radius: Math.sqrt(d.size) * 10,
+					radius: Math.sqrt(d.size) * 6,
 					name: d.name,
-					startX: 150 + nodeUnitX * col,
-					startY: 300 + nodeUnitY * row,
+					startX: 200 + nodeUnitX * col,
+					startY: 100 + nodeUnitY * row,
 				};
 			});
 		nodes[0].primary = true;
 		result = result.concat(nodes);
 	}
-
-	// load the SVG file and append it to the SVG container
-	d3.xml("listIcons/accessibility_g.svg")
-		.mimeType("image/svg+xml")
-		.get(function (error, xml) {
-			if (error) throw error;
-			var svgNode = xml.documentElement;
-			svgNode.setAttribute("class", "accessibility-g");
-			svgNode.setAttribute("width", "20px");
-			svgNode.setAttribute("height", "20px");
-			svgNode.setAttribute("x", nodes[0].startX + "px"); // position the SVG node on top of the first node
-			svgNode.setAttribute("y", nodes[0].startY + "px");
-			svgNode.style.pointerEvents = "none";
-			svgNode.style.opacity = 0.8;
-			svgNode.style.position = "absolute";
-			svg.node().appendChild(svgNode);
-		});
 
 	return result;
 }
@@ -192,9 +181,6 @@ var list = [
 ];
 
 document.addEventListener("DOMContentLoaded", function (e) {
-	var width = window.innerWidth,
-		height = 2600;
-
 	d3.json("survey.json", function (data) {
 		var container = d3.select("#main_node");
 
@@ -205,8 +191,46 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 		var svg = container
 			.append("svg")
-			.attr("width", width)
-			.attr("height", height);
+			.attr("width", totalWidth)
+			.attr("height", totalHeight);
+
+		var imageNodes = list.map(function (d, i) {
+			var nodeUnitX = window.innerWidth / 5;
+			var nodeUnitY = 2600 / 6;
+			var row = Math.floor(i / 5);
+			var col = i % 5;
+			console.log("row: " + row + ": col: " + col);
+			return {
+				id: d.id,
+				name: d.name,
+				startX: 150 + nodeUnitX * col,
+				startY: 50 + nodeUnitY * row,
+				imageUrl: "listIcons/" + d.id.slice(d.id.indexOf("_") + 1) + ".svg",
+				imageWidth: nodeUnitX,
+				imageHeight: 50,
+			};
+		});
+
+		var images = svg
+			.selectAll("image")
+			.data(imageNodes)
+			.enter()
+			.append("image")
+			.attr("xlink:href", function (d) {
+				return d.imageUrl;
+			})
+			.attr("x", function (d, i) {
+				return d.startX - d.imageWidth / 2;
+			})
+			.attr("y", function (d, i) {
+				return d.startY;
+			})
+			.attr("width", function (d) {
+				return d.imageWidth;
+			})
+			.attr("height", function (d) {
+				return d.imageHeight;
+			});
 
 		var nodes = prepareData(data, list);
 		console.log(nodes);

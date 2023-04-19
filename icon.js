@@ -55,7 +55,7 @@
 // 	}
 // 	pop();
 // }
-const fontSize = 90,
+const fontSize = 70,
 	scaleRate = 6,
 	message = "ICONS。",
 	inpactRange = 120;
@@ -142,7 +142,9 @@ function setup() {
 	colorMode(HSL);
 	noStroke();
 	background("#f7f7f7");
-	fill("#000");
+	fill("#21383E");
+	textFont("Mulish");
+	textStyle(BOLD);
 	textSize(fontSize);
 	textAlign(LEFT, TOP);
 	textData = getTextData(message);
@@ -159,7 +161,7 @@ function draw() {
 	updating();
 	drawParticles();
 	fill("#05171b");
-	textFont("Mulish", [60]);
+	textFont("Nunito", [60]);
 	textStyle(BOLD);
 	text("The Future History Of", window.innerWidth / 2 - 300, 200);
 }

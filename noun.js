@@ -97,7 +97,7 @@ var x = d3
 
 // Set up the axes
 var xAxis = d3.axisBottom(x).tickSize(0);
-var yAxis = d3.axisLeft(y);
+var yAxis = d3.axisLeft(y).tickSize(0);
 
 // Add the axes to the chart
 svg
@@ -110,7 +110,7 @@ svg
 
 	.selectAll("text")
 	.style("font-size", "16px")
-	.style("font-family", "Mulish")
+	.style("font-family", "Nunito")
 	.attr("transform", "translate(0,10)")
 	.style("text-anchor", "middle");
 
@@ -120,7 +120,7 @@ svg
 	.call(yAxis)
 	.selectAll("text")
 	.style("font-size", "16px")
-	.style("font-family", "Mulish")
+	.style("font-family", "Nunito")
 	.style("text-anchor", "end");
 
 // Add mean lines
@@ -137,7 +137,7 @@ svg
 	.append("text")
 	.attr("text-anchor", "start")
 	.style("font-size", "16px")
-	.style("font-family", "Mulish")
+	.style("font-family", "Nunito")
 	.attr("x", x(meanNumber) + margin.left + 10)
 	.attr("y", svgHeight - margin.bottom - 10)
 	// .attr("dominant-baseline", "ideographic")

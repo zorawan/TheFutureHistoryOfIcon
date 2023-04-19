@@ -1868,6 +1868,27 @@
   "icon_translation": "input method",
   "age": "Under 18"
 },
+{
+  "Date": "4/17/2023 10:03:10",
+  "icon_edit": "Edit",
+  "icon_calendar": "Calendar, schedule",
+  "icon_attachment": "Attach",
+  "icon_accessibility": "I don't know",
+  "icon_folder": "Files folder",
+  "icon_hourGlass": "Timer",
+  "icon_image": "Image, photo",
+  "icon_language": "Internet, worldwide web",
+  "icon_more": "More, open a dropdown menu",
+  "icon_notification": "Alerts, notifications",
+  "icon_phone": "Call (?),answer phone (?)",
+  "icon_printer": "Printer",
+  "icon_refresh": "Reset, refresh",
+  "icon_piggyBank": "Save,put funds in savings",
+  "icon_scan": "I don't know",
+  "icon_sdCard": "Insert chip (?)",
+  "icon_translation": "Translate",
+  "age": "35 - 44"
+},
  {
   "Timestamp": "3/2/2023 16:15:13",
   "icon_profile": "Profile",
