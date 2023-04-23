@@ -1,16 +1,20 @@
-// set the dimensions and margins of the graph
-var margin = { top: 10, right: 10, bottom: 10, left: 10 },
-	width = 445 - margin.left - margin.right,
-	height = 445 - margin.top - margin.bottom;
+// // set the dimensions and treeMargins of the graph
+const treeMargin = { top: 10, right: 10, bottom: 10, left: 10 },
+	treeWidth = 445 - treeMargin.left - treeMargin.right,
+	treeHeight = 445 - treeMargin.top - treeMargin.bottom;
 
+var treeElement = document.getElementById("tree");
 // append the svg object to the body of the page
 var svg = d3
-	.select("#tree")
+	.select(treeElement)
 	.append("svg")
-	.attr("width", width + margin.left + margin.right)
-	.attr("height", height + margin.top + margin.bottom)
+	.attr("treeWidth", treeWidth + treeMargin.left + treeMargin.right)
+	.attr("treeHeight", treeHeight + treeMargin.top + treeMargin.bottom)
 	.append("g")
-	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	.attr(
+		"transform",
+		"translate(" + treeMargin.left + "," + treeMargin.top + ")"
+	);
 
 // read json data
 d3.json(
@@ -22,7 +26,7 @@ d3.json(
 		}); // Here the size of each leave is given in the 'value' field in input data
 
 		// Then d3.treemap computes the position of each element of the hierarchy
-		d3.treemap().size([width, height]).padding(2)(root);
+		d3.treemap().size([treeWidth, treeHeight]).padding(2)(root);
 
 		// use this information to add rectangles:
 		svg
@@ -36,10 +40,10 @@ d3.json(
 			.attr("y", function (d) {
 				return d.y0;
 			})
-			.attr("width", function (d) {
+			.attr("treeWidth", function (d) {
 				return d.x1 - d.x0;
 			})
-			.attr("height", function (d) {
+			.attr("treeHeight", function (d) {
 				return d.y1 - d.y0;
 			})
 			.style("stroke", "black")

@@ -1,4 +1,5 @@
 // Data for the chart
+
 var data = [
 	{ name: "Printer", count: 10381 },
 	{ name: "Notification", count: 22839 },
@@ -31,7 +32,6 @@ var data = [
 	{ name: "Bluetooth", count: 3550 },
 	{ name: "Settings", count: 32262 },
 ];
-
 function getMiddleItem(arr) {
 	const sortedData = arr.sort((a, b) => a.count - b.count);
 	console.log(sortedData);
@@ -54,6 +54,7 @@ const meanNumber = getAverage(data);
 var nounElement = document.getElementById("noun");
 var svgWidth = window.innerWidth;
 var svgHeight = 800;
+
 var margin = { top: 20, right: 160, bottom: 200, left: 320 };
 var chartWidth = svgWidth - margin.left - margin.right;
 var chartHeight = svgHeight - margin.top - margin.bottom;
@@ -63,6 +64,15 @@ var svg = d3
 	.append("svg")
 	.attr("width", svgWidth)
 	.attr("height", svgHeight);
+// .attr("viewBox", `0 0 ${svg.attr("width")} ${svg.attr("height")}`)
+// .style("width", "100%")
+// .style("height", "auto");
+
+// d3.select(window).on("resize", () => {
+// 	const width = svg.node().parentNode.clientWidth;
+// 	const height = width / 2; // Replace "aspectRatio" with the aspect ratio of your SVG
+// 	svg.attr("viewBox", `0 0 ${width} ${height}`);
+// });
 
 var chart = svg
 	.append("g")
@@ -86,16 +96,16 @@ var y = d3
 
 var x = d3
 	.scaleLinear()
-	.range([10, chartWidth])
+	.range([0, chartWidth])
 	.domain([
-		10,
+		0,
 		d3.max(data, function (d) {
 			return d.count;
 		}),
 	]);
 
 // Set up the axes
-var xAxis = d3.axisBottom(x).tickSize(0);
+var xAxis = d3.axisBottom(x).tickSize(10);
 var yAxis = d3.axisLeft(y).tickSize(0);
 
 // Add the axes to the chart
@@ -107,27 +117,21 @@ svg
 	)
 	.call(xAxis)
 	.select(".domain")
-	.remove();
+	.remove()
 
-svg
-	.selectAll("text")
-	.style("font-size", "16px")
-	.style("font-family", "Nunito")
-	.attr("transform", "translate(0,10)")
-	.style("text-anchor", "middle");
+	.attr("text-anchor", "middle");
 
 svg
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 	.call(yAxis)
 	.select(".domain")
-	.remove();
-svg
-	.selectAll("text")
-	.style("font-size", "16px")
-	.style("font-family", "Nunito")
-	.style("text-anchor", "end")
+	.remove()
+
+	.attr("text-anchor", "end")
 	.style("fill", "#21383E");
+
+svg.selectAll("text").style("font-size", "16px").style("font-family", "Nunito");
 
 // Add mean lines
 svg
@@ -146,7 +150,6 @@ svg
 	.style("font-family", "Nunito")
 	.attr("x", x(meanNumber) + margin.left + 10)
 	.attr("y", svgHeight - margin.bottom - 10)
-	// .attr("dominant-baseline", "ideographic")
 	.text("Mean: " + meanNumber.toFixed(0));
 
 // Handmade legend
@@ -174,6 +177,15 @@ svg
 	.attr("x", 420)
 	.attr("y", chartHeight + margin.top + 70)
 	.text("Below the Median")
+	.style("font-size", "15px")
+	.attr("alignment-baseline", "middle");
+svg
+	.append("text")
+	.attr("x", 200 - 6)
+	.attr("y", chartHeight + margin.top + 100)
+	.text(
+		"*The number is based on the time we studied this icon set in The Noun Project."
+	)
 	.style("font-size", "15px")
 	.attr("alignment-baseline", "middle");
 
@@ -232,6 +244,7 @@ chart
 	.attr("rx", 4)
 	.attr("class", "bar")
 	.style("fill", function (d) {
+		console.log(d);
 		if (d.count >= middleObject.count) {
 			return "rgba(33, 56, 62, 0.5)";
 		} else {
@@ -250,7 +263,9 @@ chart
 	})
 	.attr("height", y.bandwidth())
 	.on("mouseover", function (d) {
-		showTooltip(d);
+		if (d3.event.target.classList.contains("bar")) {
+			showTooltip(d);
+		}
 	})
 	.on("mouseout", function (d) {
 		hideTooltip();

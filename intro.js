@@ -373,7 +373,7 @@ $(document).ready(function () {
 	var second = $(".second").offset().top - compensation + 100;
 	var third = $(".third").offset().top - compensation;
 	var fourth = $(".fourth").offset().top - compensation;
-	var footer = $("footer").offset().top - compensation;
+	var footer = $(".footer").offset().top - compensation;
 	$(document).scroll(function () {
 		//hide all tooltips
 		$(".img_tooltip").hide();

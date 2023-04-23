@@ -71,14 +71,14 @@ p {
 	flex-direction: column;
 	margin: 0, 0, 0, 0;
 	padding: 1.5em;
-	gap: 13px;
+	gap: 1em;
 	background: #f7f7f7;
 	box-shadow: -10px -20px 20px rgba(255, 255, 255, 0.9),
 		0px 20px 20px rgba(5, 23, 27, 0.1);
 	border-radius: 20px;
 	font-size: 1em;
 	line-height: 1.5em;
-	width: 280px;
+	width: 220px;
 }
 
 .card_content {
@@ -509,16 +509,16 @@ canvas {
 	position: absolute;
 	color: #fff;
 	background: #c1db29;
-	width: 6em;
-	height: 60px;
+	width: 8em;
+	height: 50px;
 	top: -30px;
 	left: 30px;
 	border-radius: 12px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 2em;
-	font-weight: 1000;
+	font-size: 1.6em;
+	font-weight: 800;
 }
 
 .timeline ul li:nth-of-type(odd) > div {

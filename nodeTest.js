@@ -240,14 +240,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			.force(
 				"x",
 				d3.forceX().x(function (d) {
-					console.log("force.x: " + d.startX);
 					return d.startX;
 				})
 			)
 			.force(
 				"y",
 				d3.forceY().y(function (d) {
-					console.log("force.y: " + d.startY);
 					return d.startY;
 				})
 			)
