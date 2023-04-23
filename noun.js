@@ -1,35 +1,35 @@
 // Data for the chart
 var data = [
-	{ name: "Print", count: 10907 },
-	{ name: "Notification", count: 22539 },
-	{ name: "Bookmark", count: 14375 },
-	{ name: "Share", count: 22869 },
-	{ name: "Image", count: 26323 },
-	{ name: "Calendar", count: 10419 },
-	{ name: "Power", count: 42011 },
-	{ name: "Rate", count: 9407 },
-	{ name: "Profile", count: 39200 },
-	{ name: "Comment", count: 13393 },
-	{ name: "Desktop", count: 12222 },
-	{ name: "USB", count: 8891 },
-	{ name: "Refresh", count: 12176 },
-	{ name: "Edit", count: 22409 },
+	{ name: "Printer", count: 10381 },
+	{ name: "Notification", count: 22839 },
+	{ name: "Bookmark", count: 14538 },
+	{ name: "Share", count: 23158 },
+	{ name: "Image", count: 26752 },
+	{ name: "Calendar", count: 39501 },
+	{ name: "Power", count: 42862 },
+	{ name: "Rate", count: 9593 },
+	{ name: "Profile", count: 39602 },
+	{ name: "Message", count: 79651 },
+	{ name: "Desktop", count: 12416 },
+	{ name: "USB", count: 8947 },
+	{ name: "Refresh", count: 12255 },
+	{ name: "Edit", count: 22587 },
 	{ name: "Phone CallBack", count: 23 },
-	{ name: "SD Card", count: 1570 },
-	{ name: "Language", count: 5415 },
-	{ name: "Hourglass", count: 4444 },
-	{ name: "Database", count: 21468 },
-	{ name: "Saving", count: 7362 },
-	{ name: "Thermostat", count: 266 },
-	{ name: "Folder", count: 47411 },
-	{ name: "Scan", count: 8410 },
-	{ name: "Attache file", count: 931 },
-	{ name: "Link", count: 11322 },
-	{ name: "Translate", count: 674 },
-	{ name: "More", count: 10457 },
-	{ name: "Accessibility", count: 1228 },
-	{ name: "Bluetooth", count: 3493 },
-	{ name: "Setting", count: 26449 },
+	{ name: "SD Card", count: 1591 },
+	{ name: "Language", count: 5437 },
+	{ name: "Hourglass", count: 4552 },
+	{ name: "Database", count: 21949 },
+	{ name: "Piggy Bank", count: 3075 },
+	{ name: "Thermometer", count: 7998 },
+	{ name: "Folder", count: 48056 },
+	{ name: "Scan", count: 8610 },
+	{ name: "Attachment", count: 4905 },
+	{ name: "Link", count: 11475 },
+	{ name: "Translation", count: 537 },
+	{ name: "More", count: 10506 },
+	{ name: "Accessibility", count: 1248 },
+	{ name: "Bluetooth", count: 3550 },
+	{ name: "Settings", count: 32262 },
 ];
 
 function getMiddleItem(arr) {
@@ -44,7 +44,6 @@ function getAverage(arr) {
 	for (let i = 0; i < arr.length; i++) {
 		sum += arr[i].count;
 	}
-
 	let average = sum / arr.length;
 	return average;
 }
@@ -55,7 +54,7 @@ const meanNumber = getAverage(data);
 var nounElement = document.getElementById("noun");
 var svgWidth = window.innerWidth;
 var svgHeight = 800;
-var margin = { top: 20, right: 120, bottom: 200, left: 200 };
+var margin = { top: 20, right: 160, bottom: 200, left: 320 };
 var chartWidth = svgWidth - margin.left - margin.right;
 var chartHeight = svgHeight - margin.top - margin.bottom;
 // Set up the SVG element and chart dimensions
@@ -78,7 +77,7 @@ data.sort(function (b, a) {
 var y = d3
 	.scaleBand()
 	.range([margin.top, chartHeight])
-	.padding(0.6)
+	.padding(0.5)
 	.domain(
 		data.map(function (d) {
 			return d.name;
@@ -87,9 +86,9 @@ var y = d3
 
 var x = d3
 	.scaleLinear()
-	.range([0, chartWidth])
+	.range([10, chartWidth])
 	.domain([
-		0,
+		10,
 		d3.max(data, function (d) {
 			return d.count;
 		}),
@@ -107,7 +106,10 @@ svg
 		"translate(" + margin.left + "," + (chartHeight + margin.top) + ")"
 	)
 	.call(xAxis)
+	.select(".domain")
+	.remove();
 
+svg
 	.selectAll("text")
 	.style("font-size", "16px")
 	.style("font-family", "Nunito")
@@ -118,18 +120,22 @@ svg
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 	.call(yAxis)
+	.select(".domain")
+	.remove();
+svg
 	.selectAll("text")
 	.style("font-size", "16px")
 	.style("font-family", "Nunito")
-	.style("text-anchor", "end");
+	.style("text-anchor", "end")
+	.style("fill", "#21383E");
 
 // Add mean lines
 svg
 	.append("line")
 	.style("stroke", "#C1DB29")
-	.style("stroke-width", "2px")
+	.style("stroke-width", "1px")
 	.attr("x1", x(meanNumber) + margin.left)
-	.attr("y1", margin.top)
+	.attr("y1", margin.top + 20)
 	.attr("x2", x(meanNumber) + margin.left)
 	.attr("y2", svgHeight - margin.bottom);
 // Draw the label for the mean
@@ -147,13 +153,13 @@ svg
 svg
 	.append("circle")
 	.attr("cx", 200)
-	.attr("cy", chartHeight + margin.top + 70)
+	.attr("cy", chartHeight + margin.top + 64)
 	.attr("r", 6)
 	.style("fill", "rgba(5, 23, 27, 0.5)");
 svg
 	.append("circle")
-	.attr("cx", 200)
-	.attr("cy", chartHeight + margin.top + 100)
+	.attr("cx", 400)
+	.attr("cy", chartHeight + margin.top + 64)
 	.attr("r", 6)
 	.style("fill", "rgba(5, 23, 27)");
 svg
@@ -165,8 +171,8 @@ svg
 	.attr("alignment-baseline", "middle");
 svg
 	.append("text")
-	.attr("x", 220)
-	.attr("y", chartHeight + margin.top + 100)
+	.attr("x", 420)
+	.attr("y", chartHeight + margin.top + 70)
 	.text("Below the Median")
 	.style("font-size", "15px")
 	.attr("alignment-baseline", "middle");
@@ -180,7 +186,7 @@ var tooltip = d3
 	.style("position", "absolute")
 	.style("background-color", "#fff")
 	.style("padding", 20 + "px")
-	.style("border-radius", 6 + "px")
+	.style("border-radius", 20 + "px")
 	.style("border", 1 + "px" + "solid #e9eeef")
 	.style("box-shadow", "0px 20px 30px rgba(5, 23, 27, 0.2)");
 
@@ -197,16 +203,25 @@ function showTooltip(d) {
 				countWithCommas +
 				"</div>"
 		)
-		.style("left", d3.event.pageX + 25 + "px")
-		.style("top", d3.event.pageY - 25 + "px")
+		.style("line-height", 13 + "px")
+		.style("left", d3.event.pageX - 50 + "px")
+		.style("top", d3.event.pageY - 150 + "px")
+		.style("opacity", 1)
 		.transition()
 		.duration(200)
-		.style("opacity", 1);
+		.style("opacity", 1)
+		.style("left", d3.event.pageX - 50 + "px")
+		.style("top", d3.event.pageY - 120 + "px");
 }
 
 function hideTooltip() {
 	// Hide the tooltip
-	tooltip.transition().duration(200).style("opacity", 0);
+	tooltip
+		.transition()
+		.duration(200)
+		.style("opacity", 0)
+		.style("left", d3.event.pageX - 50 + "px")
+		.style("top", d3.event.pageY - 150 + "px");
 }
 
 chart
@@ -214,12 +229,13 @@ chart
 	.data(data)
 	.enter()
 	.append("rect")
+	.attr("rx", 4)
 	.attr("class", "bar")
 	.style("fill", function (d) {
 		if (d.count >= middleObject.count) {
-			return "rgba(5, 23, 27, 0.5)";
+			return "rgba(33, 56, 62, 0.5)";
 		} else {
-			return "rgba(5, 23, 27, 1)";
+			return "rgba(33, 56, 62, 1)";
 		}
 	})
 	.attr("x", function (d) {
@@ -228,6 +244,7 @@ chart
 	.attr("y", function (d) {
 		return y(d.name);
 	})
+
 	.attr("width", function (d) {
 		return x(d.count);
 	})

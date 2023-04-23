@@ -2,6 +2,7 @@ body {
 	font-family: "Nunito", sans-serif;
 	/* font-family: "Mulish", sans-serif; */
 	background-color: #f7f7f7;
+	color: #05171b;
 }
 
 #canvas-container {
@@ -14,25 +15,38 @@ h1 {
 }
 
 h2 {
-	font-size: 3em;
-	text-transform: uppercase;
+	font-size: 1.6em;
 	text-align: center;
-	margin-top: 3em;
 	font-weight: 800;
+	line-height: 2em;
+	text-transform: uppercase;
+	text-decoration: underline;
+	text-decoration-color: #dbff00;
+	text-decoration-thickness: 6px;
+	text-decoration-skip-ink: none;
+}
+#highlight_content {
+	font-weight: 800;
+	text-transform: uppercase;
+	/* text-decoration: underline;
+	text-decoration-color: #dbff00;
+	text-decoration-thickness: 6px;
+	text-decoration-skip-ink: none; */
+}
+h3 {
+	font-size: 3em;
+	line-height: 3em;
+	font-weight: 1000;
+	text-align: center;
+	margin: 0 2em;
 }
 
-h3 {
-	font-size: 2em;
-	line-height: 3em;
-	font-weight: 700;
-	text-align: center;
-	margin: 0 6em;
-}
 h4 {
 	font-size: 1em;
 	text-align: center;
-	font-weight: 700;
+	font-weight: 800;
 	line-height: 2em;
+	text-transform: uppercase;
 }
 
 p {
@@ -48,10 +62,9 @@ p {
 .card_container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	padding: 0;
-	gap: 26px;
-	margin: 3em 6em;
+	gap: 2em;
 }
 .card {
 	display: flex;
@@ -74,21 +87,21 @@ p {
 .listTitle {
 	font-weight: 800;
 }
-
-.tag {
+.tag h3 {
+	text-align: left;
+	margin: 0;
+	line-height: 1em;
+	color: #c1db29;
+}
+.tag p {
 	font-size: 1em;
 	font-weight: 700;
 	line-height: 2em;
 	color: #05171b;
-	background-color: #f7f7f7;
-	box-shadow: -10px -20px 20px rgba(255, 255, 255, 0.9),
-		0px 20px 20px rgba(5, 23, 27, 0.1);
-	border-radius: 2em;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-	padding: 12px 30px;
-	gap: 12px;
+	flex-direction: column;
+	align-items: left;
+	margin: 0;
 }
 #tag {
 	margin: 6em 10em;
@@ -136,33 +149,21 @@ img {
 	left: 0;
 }
 #HISTORY {
-	margin-top: 3em;
+	margin-top: 4em;
 }
 #history {
 	position: absolute;
-	opacity: 0;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	top: 50%;
-	animation: move-svg 2s forwards;
-	z-index: -1;
-	animation-delay: 2s;
+	/* top: 50%; */
 }
-@keyframes move-svg {
-	0% {
-		top: 0px;
-	}
-	100% {
-		top: calc(660px);
-		opacity: 100%;
-	}
-}
+
 .parallax {
 	background-color: #000 repeat fixed 100%;
 	background-size: cover;
 }
 .parallax-inner {
-	/* padding-top: 10%; */
+	padding-top: 10%;
 	padding-bottom: 20%;
 }
 .parallax-1 {
@@ -179,7 +180,7 @@ div.sticky {
 }
 
 section {
-	height: 400px;
+	height: 80vh;
 }
 
 footer {
@@ -187,6 +188,23 @@ footer {
 }
 
 .section-title-underlay {
+	font-size: 1.6em;
+	text-align: center;
+	font-weight: 800;
+	line-height: 2em;
+	text-transform: uppercase;
+	text-decoration: underline;
+	text-decoration-color: #dbff00;
+	text-decoration-thickness: 6px;
+	text-decoration-skip-ink: none;
+	position: fixed;
+	left: 50%;
+	color: #05171b;
+	top: 4em;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+}
+.section-subTitle-underlay {
 	font-size: 3em;
 	font-weight: 700;
 	position: fixed;
@@ -194,7 +212,7 @@ footer {
 	text-align: center;
 	color: #05171b;
 	text-transform: uppercase;
-	top: 2em;
+	top: 4em;
 	transform: translate(-50%, -50%);
 	opacity: 1;
 }
@@ -205,25 +223,22 @@ footer {
 	left: 50%;
 	text-align: center;
 	color: #05171b;
-	top: 12em;
+	top: 18em;
 	transform: translate(-50%, -50%);
 	opacity: 1;
 }
 .iconGrid {
 	position: fixed;
-	top: 20em;
+	top: 28em;
 	display: flex;
-	flex-flow: column wrap;
-	flex-direction: row;
+	flex-flow: row wrap;
 	justify-content: flex-start;
 	margin: 1em 4em 1em 4em;
-	/* transform: translate(0%, 0%); */
 	fill: "currentColor";
 	opacity: 1;
 }
 
 .tip_title {
-	font-family: "Mulish";
 	font-weight: 1000;
 	font-size: 1.4em;
 	line-height: 1.4em;
@@ -234,8 +249,7 @@ footer {
 	font-style: italic;
 }
 .description_tooltip {
-	font-family: "Mulish";
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 1em;
 	text-align: left;
 	line-height: 1.5em;
@@ -253,9 +267,8 @@ footer {
 	max-width: 30rem;
 }
 .highlightTag {
-	font-family: "Mulish";
-	font-weight: 800;
-	font-size: 0.8em;
+	font-weight: 700;
+	font-size: 0.9em;
 	text-align: left;
 	line-height: 2.4em;
 }
@@ -284,22 +297,38 @@ footer {
 }
 #end {
 	height: 30vh;
-	background-color: #e9eeef;
+	margin-top: 10em;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: start;
+	background-color: #21383e;
 	padding-top: 1vh;
 	text-align: left;
-	font-size: 1.2em;
-	font-weight: 500;
+	font-size: 1em;
+	font-weight: 200;
 }
+#end p,
+#end a {
+	font-size: 1em;
+	font-weight: 200;
+	line-height: 2em;
+	text-decoration: none;
+	color: rgba(219, 255, 0, 0.4);
+}
+#end a:hover {
+	color: #ffffff;
+}
+
 .node_tooltip {
 	position: absolute;
 	font-family: "Mulish";
-	font-size: 1.2em;
-	font-weight: 500;
-	line-height: 2.4em;
+	font-size: 1em;
+	font-weight: 700;
+	line-height: 1.5em;
 	color: #05171b;
 	text-align: left;
 	background-color: #fff;
-	padding: 0 1em;
+	padding: 0.5em 1em;
 	border-radius: 12px;
 	border: 1px solid #e9eeef;
 	box-shadow: 0px 20px 30px rgba(5, 23, 27, 0.2);
@@ -315,10 +344,9 @@ canvas {
 #final_1_1 {
 	display: flex;
 	flex-direction: row;
-	align-items: flex-start;
 	justify-content: center;
 	align-items: stretch;
-	gap: 70px;
+	gap: 6em;
 }
 .final_card {
 	flex: none;
@@ -357,39 +385,38 @@ canvas {
 .final_subTitle {
 	font-size: 1.3em;
 	font-weight: 700;
-	text-align: center;
+	text-align: left;
 	margin: 2em;
 }
 .color_contaner {
 	display: flex;
 	flex-direction: row;
-	gap: 10em;
-	justify-content: center;
-	margin-top: 2em;
+	gap: 4em;
+	justify-content: right;
+	margin: 3em 10em;
 }
 .color_code {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	gap: 1em;
 }
 .quote {
 	text-align: left;
-	line-height: 2em;
-	margin-bottom: 4em;
+	line-height: 1.5em;
+	margin-top: 2em;
+	margin-bottom: 3em;
 	color: #c1db29;
 }
-a {
-	color: rgb(5, 23, 27, 0.6);
-	text-decoration: none;
-	font-size: 1em;
-	font-weight: 700;
-}
+
 .text-wrapper {
 	overflow: hidden;
+	margin-top: 4em;
 }
 
 .text {
 	overflow: hidden;
 	transform: translatey(0px);
+	margin-top: 2em;
 	animation: float 6s ease-in-out infinite;
 }
 
@@ -402,5 +429,136 @@ a {
 	}
 	100% {
 		transform: translatey(0px);
+	}
+}
+#xdivider {
+	margin-top: 10em;
+	display: flex;
+	justify-content: center;
+}
+.takeaways {
+	font-size: 2em;
+}
+.takeaway_container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.takeaway_container p {
+	width: 40vw;
+	font-size: 1.4em;
+	font-weight: 700;
+}
+/* -------------------------------- */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	/* box-sizing: border-box; */
+}
+.timeline {
+	height: auto;
+}
+.timeline ul li {
+	list-style-type: none;
+	position: relative;
+	width: 6px;
+	margin: 0 auto;
+	padding-top: 50px;
+	background: #f7f7f7;
+}
+.timeline ul li::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%) rotate(45deg);
+	width: 20px;
+	height: 20px;
+	z-index: 2;
+	background: #f7f7f7;
+}
+.timeline ul li div p {
+	margin: 0;
+	font-weight: 700;
+	font-size: 1.3em;
+}
+.timeline ul li div {
+	position: relative;
+	bottom: 0;
+	width: 400px;
+	padding: 2em;
+	background: #fff;
+	box-shadow: -10px -20px 20px rgba(255, 255, 255, 0.9),
+		0px 20px 20px rgba(5, 23, 27, 0.1);
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+}
+.timeline ul li div img {
+	background-color: #fff;
+}
+.timeline ul li nameTag {
+	position: absolute;
+	color: #fff;
+	background: #c1db29;
+	width: 6em;
+	height: 60px;
+	top: -30px;
+	left: 30px;
+	border-radius: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+	font-weight: 1000;
+}
+
+.timeline ul li:nth-of-type(odd) > div {
+	left: 45px;
+}
+.timeline ul li:nth-of-type(even) > div {
+	left: -439px;
+}
+
+.timeline ul li:nth-of-type(odd) div {
+	transform: translate3d(100px, -10px, 0) rotate(10deg);
+}
+.timeline ul li:nth-of-type(even) div {
+	transform: translate3d(-100px, -10px, 0) rotate(10deg);
+}
+.timeline ul li.in-view div {
+	transform: none;
+	visibility: visible;
+	opacity: 1;
+}
+@media screen and (max-width: 900px) {
+	.timeline ul li div {
+		width: 250px;
+		flex-direction: column;
+	}
+	.timeline ul li:nth-of-type(even) > div {
+		left: -289px;
+	}
+}
+@media screen and (max-width: 600px) {
+	body {
+		background: #8bfff4;
+	}
+	.timeline ul li {
+		margin-left: 20px;
+	}
+	.timeline ul li div {
+		width: calc(100vw - 91px);
+	}
+	.timeline ul li:nth-of-type(even) > div {
+		left: 45px;
 	}
 }

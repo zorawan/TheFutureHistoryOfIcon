@@ -1,6 +1,6 @@
 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M14 2C11.2386 2 9 4.23858 9 7V23C9 25.7614 11.2386 28 14 28H22.7083L22 33H27.0499H32.9501H38L37.2917 28H46C48.7614 28 51 25.7614 51 23V7C51 4.23858 48.7614 2 46 2H14ZM14 23V7H46V23H14Z" fill="#05171B" fill-opacity="0.7"/>
-<rect x="8" y="38" width="44" height="18" stroke="#05171B" stroke-opacity="0.7" stroke-width="5" stroke-linejoin="round"/>
-<circle cx="14.5" cy="45.5" r="2.5" fill="#05171B" fill-opacity="0.7"/>
-<line x1="34" y1="45.5" x2="46" y2="45.5" stroke="#05171B" stroke-opacity="0.7" stroke-width="5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14 2C11.2386 2 9 4.23858 9 7V23C9 25.7614 11.2386 28 14 28H22.7083L22 33H27.0499H32.9501H38L37.2917 28H46C48.7614 28 51 25.7614 51 23V7C51 4.23858 48.7614 2 46 2H14ZM14 23V7H46V23H14Z" fill="#21383E"/>
+<rect x="8" y="38" width="44" height="18" stroke="#21383E" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="14.5" cy="45.5" r="2.5" fill="#21383E"/>
+<line x1="34" y1="45.5" x2="46" y2="45.5" stroke="#21383E" stroke-width="5"/>
 </svg>

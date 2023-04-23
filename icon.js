@@ -144,6 +144,7 @@ function setup() {
 	background("#f7f7f7");
 	fill("#21383E");
 	textFont("Mulish");
+	textFont("sans-serif");
 	textStyle(BOLD);
 	textSize(fontSize);
 	textAlign(LEFT, TOP);

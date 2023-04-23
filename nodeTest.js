@@ -1,11 +1,15 @@
 let width = window.innerWidth;
 let height = 2600;
+let iconHeight = 36;
 let margins = { top: 100, right: 60, bottom: 100, left: 60 };
-let totalWidth = width - margins.left - margins.right;
+let totalWidth = width;
 let totalHeight = height - margins.top - margins.bottom;
+let nodeUnitX = totalWidth / 5;
+let nodeUnitY = totalHeight / 6;
 
 function prepareData(json, list) {
 	var result = [];
+
 	for (var i = 0; i < list.length; i++) {
 		var answers = [];
 		json.map((item) => {
@@ -39,21 +43,20 @@ function prepareData(json, list) {
 				return b.size - a.size; // sort nodes by size in descending order
 			})
 			.map(function (d) {
-				var nodeUnitX = totalWidth / 5;
-				var nodeUnitY = totalHeight / 6;
 				var row = Math.floor(i / 5);
 				var col = i % 5;
+
 				return {
+					count: d.size,
 					radius: Math.sqrt(d.size) * 6,
 					name: d.name,
-					startX: 200 + nodeUnitX * col,
-					startY: 100 + nodeUnitY * row,
+					startX: nodeUnitX * col + nodeUnitX / 2,
+					startY: margins.top - 20 + nodeUnitY * row + (nodeUnitY - 36) / 2,
 				};
 			});
 		nodes[0].primary = true;
 		result = result.concat(nodes);
 	}
-
 	return result;
 }
 
@@ -193,21 +196,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			.append("svg")
 			.attr("width", totalWidth)
 			.attr("height", totalHeight);
-
 		var imageNodes = list.map(function (d, i) {
-			var nodeUnitX = window.innerWidth / 5;
-			var nodeUnitY = 2600 / 6;
 			var row = Math.floor(i / 5);
 			var col = i % 5;
-			console.log("row: " + row + ": col: " + col);
+
 			return {
 				id: d.id,
 				name: d.name,
-				startX: 150 + nodeUnitX * col,
-				startY: 50 + nodeUnitY * row,
+				startX: nodeUnitX * col,
+				startY: margins.top + nodeUnitY * row,
 				imageUrl: "listIcons/" + d.id.slice(d.id.indexOf("_") + 1) + ".svg",
 				imageWidth: nodeUnitX,
-				imageHeight: 50,
+				imageHeight: 36,
 			};
 		});
 
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 				return d.imageUrl;
 			})
 			.attr("x", function (d, i) {
-				return d.startX - d.imageWidth / 2;
+				return d.startX;
 			})
 			.attr("y", function (d, i) {
 				return d.startY;
@@ -237,17 +237,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 		var simulation = d3
 			.forceSimulation(nodes)
-			.force("charge", d3.forceManyBody().strength(10))
-
 			.force(
 				"x",
 				d3.forceX().x(function (d) {
+					console.log("force.x: " + d.startX);
 					return d.startX;
 				})
 			)
 			.force(
 				"y",
 				d3.forceY().y(function (d) {
+					console.log("force.y: " + d.startY);
 					return d.startY;
 				})
 			)
@@ -275,10 +275,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
 				// show tooltip on mouseover
 				tooltip.transition().duration(200).style("opacity", 0.9);
 				tooltip
-					.html(d.name.charAt(0).toUpperCase() + d.name.slice(1))
+					.html(
+						d.name.charAt(0).toUpperCase() +
+							d.name.slice(1) +
+							"<br><span style='font-weight:500'>Answer Count: " +
+							d.count +
+							"</span>"
+					)
 
 					.style("left", d3.event.pageX + 10 + "px")
-					.style("top", d3.event.pageY - 28 + "px");
+					.style("top", d3.event.pageY - 60 + "px");
 			})
 
 			.on("mouseout", function (d) {
