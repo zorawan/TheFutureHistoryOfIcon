@@ -1,6 +1,6 @@
 // Data for the chart
 
-var data = [
+var data1 = [
 	{ name: "Printer", count: 10381 },
 	{ name: "Notification", count: 22839 },
 	{ name: "Bookmark", count: 14538 },
@@ -32,6 +32,40 @@ var data = [
 	{ name: "Bluetooth", count: 3550 },
 	{ name: "Settings", count: 32262 },
 ];
+
+var data2 = [
+	{ name: "Printer", count: 11600 },
+	{ name: "Notification", count: 21124 },
+	{ name: "Bookmark", count: 12726 },
+	{ name: "Share", count: 38249 },
+	{ name: "Image", count: 78094 },
+	{ name: "Calendar", count: 51618 },
+	{ name: "Power", count: 96605 },
+	{ name: "Rate", count: 13735 },
+	{ name: "Profile", count: 64033 },
+	{ name: "Message", count: 153706 },
+	{ name: "Desktop", count: 70892 },
+	{ name: "USB", count: 10964 },
+	{ name: "Refresh", count: 18361 },
+	{ name: "Edit", count: 238219 },
+	{ name: "Phone CallBack", count: 60 },
+	{ name: "SD Card", count: 2296 },
+	{ name: "Language", count: 11088 },
+	{ name: "Hourglass", count: 6302 },
+	{ name: "Database", count: 58608 },
+	{ name: "Piggy Bank", count: 5967 },
+	{ name: "Thermometer", count: 11446 },
+	{ name: "Folder", count: 130511 },
+	{ name: "Scan", count: 20946 },
+	{ name: "Attachment", count: 3970 },
+	{ name: "Link", count: 102109 },
+	{ name: "Translation", count: 1889 },
+	{ name: "More", count: 191602 },
+	{ name: "Accessibility", count: 2160 },
+	{ name: "Bluetooth", count: 3932 },
+	{ name: "Settings", count: 34168 },
+];
+
 function getMiddleItem(arr) {
 	const sortedData = arr.sort((a, b) => a.count - b.count);
 	console.log(sortedData);
@@ -48,8 +82,10 @@ function getAverage(arr) {
 	return average;
 }
 
-const middleObject = getMiddleItem(data);
-const meanNumber = getAverage(data);
+const middleObject1 = getMiddleItem(data1);
+const meanNumber1 = getAverage(data1);
+const middleObject2 = getMiddleItem(data2);
+const meanNumber2 = getAverage(data2);
 
 var nounElement = document.getElementById("noun");
 var svgWidth = window.innerWidth;
@@ -58,6 +94,7 @@ var svgHeight = 800;
 var margin = { top: 20, right: 160, bottom: 200, left: 320 };
 var chartWidth = svgWidth - margin.left - margin.right;
 var chartHeight = svgHeight - margin.top - margin.bottom;
+
 // Set up the SVG element and chart dimensions
 var svg = d3
 	.select(nounElement)
@@ -118,7 +155,6 @@ svg
 	.call(xAxis)
 	.select(".domain")
 	.remove()
-
 	.attr("text-anchor", "middle");
 
 svg
@@ -131,7 +167,11 @@ svg
 	.attr("text-anchor", "end")
 	.style("fill", "#21383E");
 
-svg.selectAll("text").style("font-size", "16px").style("font-family", "Nunito");
+svg
+	.selectAll("text")
+	.style("font-size", "16px")
+	.style("font-family", "Nunito")
+	.style("fill", "#9FA9AB");
 
 // Add mean lines
 svg
@@ -148,9 +188,10 @@ svg
 	.attr("text-anchor", "start")
 	.style("font-size", "16px")
 	.style("font-family", "Nunito")
+	.style("fill", "#C1DB29")
 	.attr("x", x(meanNumber) + margin.left + 10)
 	.attr("y", svgHeight - margin.bottom - 10)
-	.text("Mean: " + meanNumber.toFixed(0));
+	.text("- Mean: " + meanNumber.toFixed(0));
 
 // Handmade legend
 svg
@@ -171,14 +212,16 @@ svg
 	.attr("y", chartHeight + margin.top + 70)
 	.text("Above the Median")
 	.style("font-size", "15px")
-	.attr("alignment-baseline", "middle");
+	.attr("alignment-baseline", "middle")
+	.style("fill", "#9FA9AB");
 svg
 	.append("text")
 	.attr("x", 420)
 	.attr("y", chartHeight + margin.top + 70)
 	.text("Below the Median")
 	.style("font-size", "15px")
-	.attr("alignment-baseline", "middle");
+	.attr("alignment-baseline", "middle")
+	.style("fill", "#9FA9AB");
 svg
 	.append("text")
 	.attr("x", 200 - 6)
@@ -187,6 +230,7 @@ svg
 		"*The number is based on the time we studied this icon set in The Noun Project."
 	)
 	.style("font-size", "15px")
+	.style("fill", "#9FA9AB")
 	.attr("alignment-baseline", "middle");
 
 // Add the tooltip to the chart
@@ -236,37 +280,81 @@ function hideTooltip() {
 		.style("top", d3.event.pageY - 150 + "px");
 }
 
-chart
-	.selectAll(".bar")
-	.data(data)
-	.enter()
-	.append("rect")
-	.attr("rx", 4)
-	.attr("class", "bar")
-	.style("fill", function (d) {
-		console.log(d);
-		if (d.count >= middleObject.count) {
-			return "rgba(33, 56, 62, 0.5)";
-		} else {
-			return "rgba(33, 56, 62, 1)";
-		}
-	})
-	.attr("x", function (d) {
-		return x(0);
-	})
-	.attr("y", function (d) {
-		return y(d.name);
-	})
+// chart
+// 	.selectAll(".bar")
+// 	.data(data)
+// 	.enter()
+// 	.append("rect")
+// 	.attr("rx", 4)
+// 	.attr("class", "bar")
+// 	.style("fill", function (d) {
+// 		console.log(d);
+// 		if (d.count >= middleObject.count) {
+// 			return "rgba(33, 56, 62, 0.5)";
+// 		} else {
+// 			return "rgba(33, 56, 62, 1)";
+// 		}
+// 	})
+// 	.attr("x", function (d) {
+// 		return x(0);
+// 	})
+// 	.attr("y", function (d) {
+// 		return y(d.name);
+// 	})
 
-	.attr("width", function (d) {
-		return x(d.count);
-	})
-	.attr("height", y.bandwidth())
-	.on("mouseover", function (d) {
-		if (d3.event.target.classList.contains("bar")) {
-			showTooltip(d);
-		}
-	})
-	.on("mouseout", function (d) {
-		hideTooltip();
-	});
+// 	.attr("width", function (d) {
+// 		return x(d.count);
+// 	})
+// 	.attr("height", y.bandwidth())
+// 	.on("mouseover", function (d) {
+// 		if (d3.event.target.classList.contains("bar")) {
+// 			showTooltip(d);
+// 		}
+// 	})
+// 	.on("mouseout", function (d) {
+// 		hideTooltip();
+// 	});
+
+function update(data) {
+	var chart = svg.selectAll("rect").data(data);
+
+	chart
+		.selectAll(".bar")
+		.data(data)
+		.enter()
+		.append("rect")
+		.merge(chart)
+		.transition()
+		.duration(1000)
+		.attr("rx", 4)
+		.attr("class", "bar")
+		.style("fill", function (d) {
+			console.log(d);
+			if (d.count >= middleObject.count) {
+				return "rgba(33, 56, 62, 0.5)";
+			} else {
+				return "rgba(33, 56, 62, 1)";
+			}
+		})
+		.attr("x", function (d) {
+			return x(0);
+		})
+		.attr("y", function (d) {
+			return y(d.name);
+		})
+
+		.attr("width", function (d) {
+			return x(d.count);
+		})
+		.attr("height", y.bandwidth())
+		.on("mouseover", function (d) {
+			if (d3.event.target.classList.contains("bar")) {
+				showTooltip(d);
+			}
+		})
+		.on("mouseout", function (d) {
+			hideTooltip();
+		});
+}
+// Initialize the plot with the first dataset
+update(data1);
