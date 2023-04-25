@@ -60,126 +60,177 @@ function prepareData(json, list) {
 	return result;
 }
 
+function prepareAgeData(json, list) {
+	var resultByAgeArray = [];
+
+	for (var i = 0; i < list.length; i++) {
+		var ageResult = {
+			regex: list[i].regex,
+			id: list[i].id.slice(list[i].id.indexOf(",") + 1),
+			children: [
+				{
+					name: "Under 24",
+					regex: "Under 18, 18 - 24",
+					value: 0,
+					total: 0,
+				},
+				{
+					name: "25 - 34",
+					regex: "25 - 34",
+					value: 0,
+					total: 0,
+				},
+				{
+					name: "35 and Up",
+					regex: "35 - 44, 45 - 54, 55 - 64",
+					value: 0,
+					total: 0,
+				},
+			],
+		};
+
+		json.map((item) => {
+			if (item.hasOwnProperty(list[i].id)) {
+				var values = item[list[i].id];
+				var cleanValue = values.toLowerCase();
+				for (var age of ageResult.children) {
+					if (age.regex.indexOf(item.age) >= 0) {
+						age.total += 1;
+						//add correct count by 1 for the age
+						if (ageResult.regex.test(cleanValue)) {
+							age.value += 1;
+						}
+					}
+				}
+			}
+		});
+		resultByAgeArray.push(ageResult);
+	}
+
+	console.log(resultByAgeArray);
+	return resultByAgeArray;
+}
+
 var list = [
 	{
 		id: "icon_edit",
-		name: "Edits",
+		regex: /edit|editing|pen|pencil|write|writing/,
 	},
 	{
 		id: "icon_profile",
-		name: "Profile",
+		regex: /person|profile|user|account/,
 	},
 	{
 		id: "icon_calendar",
-		name: "Calendar",
+		regex: /calendar/,
 	},
 	{
 		id: "icon_attachment",
-		name: "Save",
+		regex: /attachment|attach|clip/,
 	},
 	{
 		id: "icon_accessibility",
-		name: "Accessibility",
+		regex: /accessibility/,
 	},
 	{
 		id: "icon_folder",
-		name: "Folder",
+		regex: /folder/,
 	},
 	{
 		id: "icon_hourGlass",
-		name: "HourGlass",
+		regex: /hourglass|hour glass|loading|wait|waiting|load time/,
 	},
 	{
 		id: "icon_image",
-		name: "Image",
+		regex: /image|photo|picture|pictures|images|pics/,
 	},
 	{
 		id: "icon_language",
-		name: "Language",
+		regex: /globe|language/,
 	},
 	{
 		id: "icon_more",
-		name: "More",
+		regex: /more|three dots|dots|Menu|dropdown/,
 	},
 	{
 		id: "icon_notification",
-		name: "Notification",
+		regex: /notification|bell|alert|alarm/,
 	},
 	{
 		id: "icon_phone",
-		name: "Phone",
+		regex: /phone|call|call back/,
 	},
 	{
 		id: "icon_printer",
-		name: "Printer",
+		regex: /printer|print|printing/,
 	},
 	{
 		id: "icon_refresh",
-		name: "Refresh",
+		regex: /refresh|refreshing|reload|reset|re-load/,
 	},
 	{
 		id: "icon_piggyBank",
-		name: "PiggyBank",
+		regex: /piggyBank|save money|saving|money/,
 	},
 	{
 		id: "icon_scan",
-		name: "Scan",
+		regex: /scan|scanning|rq code/,
 	},
 	{
 		id: "icon_sdCard",
-		name: "SdCard",
+		regex: /sd card|memory|save/i,
 	},
 	{
 		id: "icon_translation",
-		name: "Translation",
+		regex: /translation|translate|translating|language/,
 	},
 	{
 		id: "icon_link",
-		name: "Link",
+		regex: /link/,
 	},
 	{
 		id: "icon_bluetooth",
-		name: "Bluetooth",
+		regex: /bluetooth/,
 	},
 	{
 		id: "icon_usb",
-		name: "Usb",
+		regex: /usb|flash drive/,
 	},
 	{
 		id: "icon_thermometer",
-		name: "Thermometer",
+		regex: /thermometer|temperature/,
 	},
 	{
 		id: "icon_database",
-		name: "Database",
+		regex: /database|data|storage/,
 	},
 	{
 		id: "icon_message",
-		name: "Message",
+		regex: /message|messages|messaging|chat|chatting/,
 	},
 	{
 		id: "icon_bookmark",
-		name: "Bookmark",
+		regex: /bookmark|save/,
 	},
 	{
 		id: "icon_rate",
-		name: "Rate",
+		regex: /rate|rating/,
 	},
 	{
 		id: "icon_power",
-		name: "Power",
+		regex: /power|power on|power off|power on\/off/,
 	},
 	{
 		id: "icon_setting",
-		name: "Setting",
+		regex: /setting|gear|tool/,
 	},
 	{
 		id: "icon_share",
-		name: "Share",
+		regex: /share/,
 	},
 	{
 		id: "icon_desktop",
-		name: "Desktop",
+		regex: /desktop|computer|pc/i,
 	},
 ];
 
@@ -235,6 +286,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		var nodes = prepareData(data, list);
 		console.log(nodes);
 
+		prepareAgeData(data, list);
 		var simulation = d3
 			.forceSimulation(nodes)
 			.force(
@@ -266,12 +318,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 				return d.radius;
 			})
 			.attr("fill", function (d, i) {
-				return d.primary ? "#21383E" : d3.hsl(Math.random() * 360, 0.8, 0.7);
+				return d.primary ? "#21383E" : d3.hsl(Math.random() * 360, 1, 0.8);
+				// return d.primary ? "#21383E" : d3.hsl(68, 1, Math.random() + 0.1);
 			})
 
 			.on("mouseover", function (d) {
 				// show tooltip on mouseover
-				tooltip.transition().duration(200).style("opacity", 0.9);
+				tooltip.transition().duration(200).style("opacity", 1);
 				tooltip
 					.html(
 						d.name.charAt(0).toUpperCase() +

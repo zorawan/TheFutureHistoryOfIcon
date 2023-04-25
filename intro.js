@@ -48,42 +48,48 @@ for (var i = 0; i < images.length; i++) {
 	imgs += `<img src="${images[i].src}" alt="${images[i].alt}" class="${images[i].class}"/>`;
 }
 
-var images_g = [
-	{ src: "listIcons/accessibility_g.svg", alt: "accessibility" },
-	{ src: "listIcons/profile_g.svg", alt: "profile" },
-	{ src: "listIcons/attachment_g.svg", alt: "attachment" },
-	{ src: "listIcons/bluetooth_g.svg", alt: "bluetooth" },
-	{ src: "listIcons/bookmark_g.svg", alt: "bookmark" },
-	{ src: "listIcons/message_g.svg", alt: "message" },
-	{ src: "listIcons/database_g.svg", alt: "database" },
-	{ src: "listIcons/desktop_g.svg", alt: "desktop" },
-	{ src: "listIcons/edit_g.svg", alt: "edit" },
-	{ src: "listIcons/calendar_g.svg", alt: "calendar" },
-	{ src: "listIcons/folder_g.svg", alt: "folder" },
-	{ src: "listIcons/hourGlass_g.svg", alt: "hourGlass" },
-	{ src: "listIcons/image_g.svg", alt: "image" },
-	{ src: "listIcons/language_g.svg", alt: "language" },
-	{ src: "listIcons/link_g.svg", alt: "link" },
-	{ src: "listIcons/usb_g.svg", alt: "usb" },
-	{ src: "listIcons/more_g.svg", alt: "more" },
-	{ src: "listIcons/notification_g.svg", alt: "notification" },
-	{ src: "listIcons/phone_g.svg", alt: "phone" },
-	{ src: "listIcons/power_g.svg", alt: "power" },
-	{ src: "listIcons/printer_g.svg", alt: "printer" },
-	{ src: "listIcons/refresh_g.svg", alt: "refresh" },
-	{ src: "listIcons/piggyBank_g.svg", alt: "piggyBank" },
-	{ src: "listIcons/scan_g.svg", alt: "scan" },
-	{ src: "listIcons/sdCard_g.svg", alt: "sdCard" },
-	{ src: "listIcons/setting_g.svg", alt: "setting" },
-	{ src: "listIcons/share_g.svg", alt: "share" },
-	{ src: "listIcons/rate_g.svg", alt: "rate" },
-	{ src: "listIcons/thermometer_g.svg", alt: "thermometer" },
-	{ src: "listIcons/translation_g.svg", alt: "translation" },
-];
+// var images_g = [
+// 	{ src: "listIcons/accessibility_g.svg", alt: "accessibility" },
+// 	{ src: "listIcons/profile_g.svg", alt: "profile" },
+// 	{ src: "listIcons/attachment_g.svg", alt: "attachment" },
+// 	{ src: "listIcons/bluetooth_g.svg", alt: "bluetooth" },
+// 	{ src: "listIcons/bookmark_g.svg", alt: "bookmark" },
+// 	{ src: "listIcons/message_g.svg", alt: "message" },
+// 	{ src: "listIcons/database_g.svg", alt: "database" },
+// 	{ src: "listIcons/desktop_g.svg", alt: "desktop" },
+// 	{ src: "listIcons/edit_g.svg", alt: "edit" },
+// 	{ src: "listIcons/calendar_g.svg", alt: "calendar" },
+// 	{ src: "listIcons/folder_g.svg", alt: "folder" },
+// 	{ src: "listIcons/hourGlass_g.svg", alt: "hourGlass" },
+// 	{ src: "listIcons/image_g.svg", alt: "image" },
+// 	{ src: "listIcons/language_g.svg", alt: "language" },
+// 	{ src: "listIcons/link_g.svg", alt: "link" },
+// 	{ src: "listIcons/usb_g.svg", alt: "usb" },
+// 	{ src: "listIcons/more_g.svg", alt: "more" },
+// 	{ src: "listIcons/notification_g.svg", alt: "notification" },
+// 	{ src: "listIcons/phone_g.svg", alt: "phone" },
+// 	{ src: "listIcons/power_g.svg", alt: "power" },
+// 	{ src: "listIcons/printer_g.svg", alt: "printer" },
+// 	{ src: "listIcons/refresh_g.svg", alt: "refresh" },
+// 	{ src: "listIcons/piggyBank_g.svg", alt: "piggyBank" },
+// 	{ src: "listIcons/scan_g.svg", alt: "scan" },
+// 	{ src: "listIcons/sdCard_g.svg", alt: "sdCard" },
+// 	{ src: "listIcons/setting_g.svg", alt: "setting" },
+// 	{ src: "listIcons/share_g.svg", alt: "share" },
+// 	{ src: "listIcons/rate_g.svg", alt: "rate" },
+// 	{ src: "listIcons/thermometer_g.svg", alt: "thermometer" },
+// 	{ src: "listIcons/translation_g.svg", alt: "translation" },
+// ];
 
 var imgs_g = "";
-for (var i = 0; i < images_g.length; i++) {
-	imgs_g += `<img src="${images_g[i].src}" alt="${images_g[i].alt}"  
+// for (var i = 0; i < images_g.length; i++) {
+// 	imgs_g += `<img src="${images_g[i].src}" alt="${images_g[i].alt}"
+// 			   onmouseenter="showImgTip(event, this)"
+// 			   onmouseout="$(this).css('background-color', '#f7f7f7'); $('.img_tooltip').hide(); $('.description_tooltip').hide();"
+// 			/>`;
+// }
+for (var i = 0; i < images.length; i++) {
+	imgs_g += `<img src="${images[i].src}" alt="${images[i].alt}" class="filter-green"
 			   onmouseenter="showImgTip(event, this)" 
 			   onmouseout="$(this).css('background-color', '#f7f7f7'); $('.img_tooltip').hide(); $('.description_tooltip').hide();"
 			/>`;
@@ -129,7 +135,11 @@ var platformArray = [
 			"Microsoft Fluent UI",
 		],
 	},
-	{ name: "message", alt: "message", desc: ["Google Material Icon"] },
+	{
+		name: "message",
+		alt: "message",
+		desc: ["Google Material Icon", "Apple SF Symbols", "Microsoft Fluent UI"],
+	},
 	{
 		name: "Share",
 		alt: "share",
@@ -305,9 +315,9 @@ var descArray = [
 		alt: "thermometer",
 	},
 	{
-		name: "Print",
-		desc: "The print icon was designed based on the home office printer. Although people are using it. Less print-out documents are required because of environmental considerations. The digital trend also leads to the none paper environment for the next generation.",
-		alt: "print",
+		name: "Printer",
+		desc: "The printer icon was designed based on the home office printer. Although people are using it. Less print-out documents are required because of environmental considerations. The digital trend also leads to the none paper environment for the next generation.",
+		alt: "printer",
 	},
 ];
 
@@ -332,7 +342,6 @@ function showImgTip(event, img) {
 		$(".img_tooltip").html(tooltipImgs);
 		$(".img_tooltip").show();
 		$(img).css("background-color", "#EBECEC");
-
 		// get the mouse position relative to the viewport
 		var mouseX = event.clientX;
 		var mouseY = event.clientY;

@@ -78,7 +78,7 @@ class Particle {
 	}
 
 	draw() {
-		fill(this.color, 88, 70);
+		fill(this.color, 100, 80);
 		circle(this.x, this.y, this.r * 2);
 		// if(Math.abs(this.x - this.originalX) > 400){
 		//     ctx.beginPath();
