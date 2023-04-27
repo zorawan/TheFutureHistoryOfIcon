@@ -597,3 +597,31 @@ canvas {
 	filter: invert(90%) sepia(10%) saturate(735%) hue-rotate(50deg)
 		brightness(100%) contrast(100%);
 }
+.btContainer {
+	display: flex;
+	justify-content: center;
+	gap: 4em;
+}
+button {
+	height: 3em;
+	width: 14em;
+	color: #05171b;
+	font-weight: 700;
+	background: #dbff00;
+	border: 2px solid #383e21;
+	box-shadow: 4px 4px 0px #383e21;
+	border-radius: 12px;
+}
+button:hover {
+	background: #c1db29;
+	border: 2px solid #05171b;
+	border-radius: 12px;
+	box-shadow: 4px 4px 0px #05171b;
+}
+button:active {
+	background-color: #c1db29;
+	border: 1px solid #05171b;
+	border-radius: 12px;
+	transform: translateY(4px);
+	box-shadow: 1px 1px 0px #05171b;
+}

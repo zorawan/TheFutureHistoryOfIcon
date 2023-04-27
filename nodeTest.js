@@ -1,7 +1,7 @@
 let width = window.innerWidth;
 let height = 2600;
 let iconHeight = 36;
-let margins = { top: 100, right: 60, bottom: 100, left: 60 };
+let margins = { top: 100, right: 100, bottom: 100, left: 100 };
 let totalWidth = width;
 let totalHeight = height - margins.top - margins.bottom;
 let nodeUnitX = totalWidth / 5;
@@ -115,122 +115,182 @@ var list = [
 	{
 		id: "icon_edit",
 		regex: /edit|editing|pen|pencil|write|writing/,
+		title: "Edit",
+		imgUrl: "listIcons/edit.svg",
 	},
 	{
 		id: "icon_profile",
 		regex: /person|profile|user|account/,
+		title: "Profile",
+		imgUrl: "listIcons/profile.svg",
 	},
 	{
 		id: "icon_calendar",
-		regex: /calendar/,
+		regex: /calendar|schedule/,
+		title: "Calendar",
+		imgUrl: "listIcons/calendar.svg",
 	},
 	{
 		id: "icon_attachment",
-		regex: /attachment|attach|clip/,
+		regex: /attachment|attach|clip|paperclip/,
+		title: "Attachment",
+		imgUrl: "listIcons/attachment.svg",
 	},
 	{
 		id: "icon_accessibility",
 		regex: /accessibility/,
+		title: "Accessibility",
+		imgUrl: "listIcons/accessibility.svg",
 	},
 	{
 		id: "icon_folder",
 		regex: /folder/,
+		title: "Folder",
+		imgUrl: "listIcons/folder.svg",
 	},
 	{
 		id: "icon_hourGlass",
 		regex: /hourglass|hour glass|loading|wait|waiting|load time/,
+		title: "Hourglass",
+		imgUrl: "listIcons/hourGlass.svg",
 	},
 	{
 		id: "icon_image",
-		regex: /image|photo|picture|pictures|images|pics/,
+		regex: /image|photo|photos|picture|pictures|images|pics/,
+		title: "Image",
+		imgUrl: "listIcons/image.svg",
 	},
 	{
 		id: "icon_language",
-		regex: /globe|language/,
+		regex: /language/,
+		title: "Language",
+		imgUrl: "listIcons/language.svg",
 	},
 	{
 		id: "icon_more",
-		regex: /more|three dots|dots|Menu|dropdown/,
+		regex: /more|three dots|dots|Menu/,
+		title: "More",
+		imgUrl: "listIcons/more.svg",
 	},
 	{
 		id: "icon_notification",
 		regex: /notification|bell|alert|alarm/,
+		title: "Notification",
+		imgUrl: "listIcons/notification.svg",
 	},
 	{
 		id: "icon_phone",
 		regex: /phone|call|call back/,
+		title: "Notification",
+		imgUrl: "listIcons/phone.svg",
 	},
 	{
 		id: "icon_printer",
 		regex: /printer|print|printing/,
+		title: "Printer",
+		imgUrl: "listIcons/printer.svg",
 	},
 	{
 		id: "icon_refresh",
-		regex: /refresh|refreshing|reload|reset|re-load/,
+		regex: /refresh|refreshing|reload|re-load/,
+		title: "Refresh",
+		imgUrl: "listIcons/refresh.svg",
 	},
 	{
 		id: "icon_piggyBank",
 		regex: /piggyBank|save money|saving|money/,
+		title: "Piggy Bank",
+		imgUrl: "listIcons/piggyBank.svg",
 	},
 	{
 		id: "icon_scan",
 		regex: /scan|scanning|rq code/,
+		title: "Scan",
+		imgUrl: "listIcons/scan.svg",
 	},
 	{
 		id: "icon_sdCard",
 		regex: /sd card|memory|save/i,
+		title: "SD Card",
+		imgUrl: "listIcons/sdCard.svg",
 	},
 	{
 		id: "icon_translation",
-		regex: /translation|translate|translating|language/,
+		regex: /translation|translate|translating/,
+		title: "Translation",
+		imgUrl: "listIcons/translation.svg",
 	},
 	{
 		id: "icon_link",
 		regex: /link/,
+		title: "Link",
+		imgUrl: "listIcons/link.svg",
 	},
 	{
 		id: "icon_bluetooth",
 		regex: /bluetooth/,
+		title: "Bluetooth",
+		imgUrl: "listIcons/bluetooth.svg",
 	},
 	{
 		id: "icon_usb",
 		regex: /usb|flash drive/,
+		title: "USB",
+		imgUrl: "listIcons/usb.svg",
 	},
 	{
 		id: "icon_thermometer",
 		regex: /thermometer|temperature/,
+		title: "Thermometer",
+		imgUrl: "listIcons/thermometer.svg",
 	},
 	{
 		id: "icon_database",
 		regex: /database|data|storage/,
+		title: "Database",
+		imgUrl: "listIcons/database.svg",
 	},
 	{
 		id: "icon_message",
-		regex: /message|messages|messaging|chat|chatting/,
+		regex: /message|messages|messaging/,
+		title: "Message",
+		imgUrl: "listIcons/message.svg",
 	},
 	{
 		id: "icon_bookmark",
 		regex: /bookmark|save/,
+		title: "Bookmark",
+		imgUrl: "listIcons/bookmark.svg",
 	},
 	{
 		id: "icon_rate",
 		regex: /rate|rating/,
+		title: "Rate",
+		imgUrl: "listIcons/rate.svg",
 	},
 	{
 		id: "icon_power",
 		regex: /power|power on|power off|power on\/off/,
+		title: "Power",
+		imgUrl: "listIcons/power.svg",
 	},
 	{
 		id: "icon_setting",
-		regex: /setting|gear|tool/,
+		regex: /setting|gear|tool|settings/,
+		title: "Settings",
+		imgUrl: "listIcons/setting.svg",
 	},
 	{
 		id: "icon_share",
 		regex: /share/,
+		title: "Share",
+		imgUrl: "listIcons/share.svg",
 	},
 	{
 		id: "icon_desktop",
 		regex: /desktop|computer|pc/i,
+		title: "Desktop",
+		imgUrl: "listIcons/desktop.svg",
 	},
 ];
 

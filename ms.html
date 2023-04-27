@@ -170,9 +170,21 @@
             <h4>Other Answers</h4>
         </div>
     </div>
+
     <div id="main_node">
+
     </div>
+    <h3 class="intro">Which icon get more answers match to its original tag?</h3>
+    <p class="Intro">When collecting these 30 icons, we recorded their original tag which we consider as their "correct"
+        name. Our objective is to determine which icon receives the most correct answers across different age groups.
+        Based on our survey data, the 25-34 age group comprises the majority of participants, accounting for
+        approximately one-third of the total number. As a result, we have grouped all ages under 24 into one category
+        and ages 35 and above into another.</p>
     <div id="tree"></div>
+    <p class="Intro">*The system uses fuzzy matching to check the accuracy of answers provided by the user. This means
+        that variations of correct answers are also considered correct. For example, if the correct answer for printer
+        icon is "printer," variations such as "print," and "printing" will also be accepted as correct.</p>
+    <div style="height: 60px;"></div>
     <div>
         <br>
     </div>
@@ -192,8 +204,10 @@
 
     <p class="Intro">Number of creation from Noun Project for these 30 selected icons shows the trend that the needs
         from designers. This can be a circumstantial evidence to show what icons are still in need.</p>
-    <button onclick="update(data1)">The Noun Project</button>
-    <button onclick="update(data2)">IconScout</button>
+    <div class="btContainer">
+        <button id="myButton" onclick="update(data1)">The Noun Project</button>
+        <button id="myButton" onclick="update(data2)">IconScout</button>
+    </div>
     <div id="noun"></div>
 
     <section class="parallax-1">
@@ -404,7 +418,7 @@
     <script src="takeaways.js"></script>
     <script src="intro.js"></script>
     <script src="nodeTest.js"></script>
-    <!-- <script src="tree.js"></script> -->
+    <script src="tree.js"></script>
     <script src="noun.js"></script>
 
 

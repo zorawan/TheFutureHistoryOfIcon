@@ -82,17 +82,16 @@ function getAverage(arr) {
 	return average;
 }
 
-const middleObject = getMiddleItem(data1);
-const meanNumber = getAverage(data1);
-const middleObject2 = getMiddleItem(data2);
-const meanNumber2 = getAverage(data2);
-
 function update(data) {
 	var nounElement = document.getElementById("noun");
+	nounElement.innerHTML = "";
+
+	const middleObject = getMiddleItem(data);
+	const meanNumber = getAverage(data);
 	var svgWidth = window.innerWidth;
 	var svgHeight = 800;
 
-	var margin = { top: 20, right: 160, bottom: 200, left: 320 };
+	var margin = { top: 20, right: 160, bottom: 200, left: 280 };
 	var chartWidth = svgWidth - margin.left - margin.right;
 	var chartHeight = svgHeight - margin.top - margin.bottom;
 
@@ -167,13 +166,13 @@ function update(data) {
 		.remove()
 
 		.attr("text-anchor", "end")
-		.style("fill", "#21383E");
+		.style("fill", "#778183");
 
 	svg
 		.selectAll("text")
 		.style("font-size", "16px")
 		.style("font-family", "Nunito")
-		.style("fill", "#9FA9AB");
+		.style("fill", "#778183");
 
 	// Add mean lines
 	svg
@@ -235,6 +234,15 @@ function update(data) {
 		.style("fill", "#9FA9AB")
 		.attr("alignment-baseline", "middle");
 
+	// // Add title
+	// svg
+	// 	.append("text")
+	// 	.attr("x", 0)
+	// 	.attr("y", 14)
+	// 	.text("The Noun Project")
+	// 	.attr("font-size", "19px")
+	// 	.attr("fill", "grey");
+
 	// Add the tooltip to the chart
 	var tooltip = d3
 		.select(nounElement)
@@ -282,41 +290,6 @@ function update(data) {
 			.style("top", d3.event.pageY - 150 + "px");
 	}
 
-	// chart
-	// 	.selectAll(".bar")
-	// 	.data(data)
-	// 	.enter()
-	// 	.append("rect")
-	// 	.attr("rx", 4)
-	// 	.attr("class", "bar")
-	// 	.style("fill", function (d) {
-	// 		console.log(d);
-	// 		if (d.count >= middleObject.count) {
-	// 			return "rgba(33, 56, 62, 0.5)";
-	// 		} else {
-	// 			return "rgba(33, 56, 62, 1)";
-	// 		}
-	// 	})
-	// 	.attr("x", function (d) {
-	// 		return x(0);
-	// 	})
-	// 	.attr("y", function (d) {
-	// 		return y(d.name);
-	// 	})
-
-	// 	.attr("width", function (d) {
-	// 		return x(d.count);
-	// 	})
-	// 	.attr("height", y.bandwidth())
-	// 	.on("mouseover", function (d) {
-	// 		if (d3.event.target.classList.contains("bar")) {
-	// 			showTooltip(d);
-	// 		}
-	// 	})
-	// 	.on("mouseout", function (d) {
-	// 		hideTooltip();
-	// 	});
-
 	chart
 		.selectAll(".bar")
 		.data(data)
@@ -357,3 +330,6 @@ function update(data) {
 }
 // Initialize the plot with the first dataset
 update(data1);
+document.getElementById("myButton").addEventListener("onclick", function () {
+	document.getElementById("myButton").classList.add("clicked");
+});
