@@ -69,7 +69,7 @@ class Particle {
 	constructor(x, y) {
 		this.x = x;
 		this.y = y;
-		this.r = 3;
+		this.r = 6;
 		this.originalX = x;
 		this.originalY = y;
 		this.color = Math.floor(Math.random() * 360);
@@ -78,8 +78,8 @@ class Particle {
 	}
 
 	draw() {
-		fill(this.color, 100, 70);
-		circle(this.x, this.y, this.r * 2);
+		fill(this.color, 95, 70);
+		circle(this.x, this.y, this.r);
 		// if(Math.abs(this.x - this.originalX) > 400){
 		//     ctx.beginPath();
 		//     ctx.moveTo(this.x, this.y);
@@ -125,15 +125,6 @@ class Particle {
 
 // **************************************
 
-// function preload() {
-// }
-
-// function windowResized() {
-// 	resizeCanvas(window.innerWidth, window.innerHeight);
-// 	setup();
-// 	draw();
-// }
-
 function setup() {
 	frameRate(30);
 	canvas = document.getElementById("myCanvas");
@@ -143,8 +134,8 @@ function setup() {
 	noStroke();
 	background("#f7f7f7");
 	fill("#21383E");
-	textFont("Nunito");
 	textFont("sans-serif");
+	textFont("Nunito");
 	textStyle(BOLD);
 	textSize(fontSize);
 	textAlign(LEFT, TOP);

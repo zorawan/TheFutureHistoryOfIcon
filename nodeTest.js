@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 				return d.radius;
 			})
 			.attr("fill", function (d, i) {
-				return d.primary ? "#21383E" : d3.hsl(Math.random() * 360, 1, 0.8);
+				return d.primary ? "#21383E" : d3.hsl(Math.random() * 360, 0.95, 0.7);
 				// return d.primary ? "#21383E" : d3.hsl(68, 1, Math.random() + 0.1);
 			})
 
