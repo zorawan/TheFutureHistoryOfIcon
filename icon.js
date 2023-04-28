@@ -69,7 +69,7 @@ class Particle {
 	constructor(x, y) {
 		this.x = x;
 		this.y = y;
-		this.r = 2;
+		this.r = 3;
 		this.originalX = x;
 		this.originalY = y;
 		this.color = Math.floor(Math.random() * 360);
@@ -78,7 +78,7 @@ class Particle {
 	}
 
 	draw() {
-		fill(this.color, 100, 80);
+		fill(this.color, 100, 70);
 		circle(this.x, this.y, this.r * 2);
 		// if(Math.abs(this.x - this.originalX) > 400){
 		//     ctx.beginPath();
@@ -143,7 +143,7 @@ function setup() {
 	noStroke();
 	background("#f7f7f7");
 	fill("#21383E");
-	textFont("Mulish");
+	textFont("Nunito");
 	textFont("sans-serif");
 	textStyle(BOLD);
 	textSize(fontSize);

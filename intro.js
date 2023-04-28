@@ -419,7 +419,7 @@ $(document).ready(function () {
 			currentStatus = "ske";
 		} else if (scrollPos > fourth && scrollPos < footer) {
 			$(".section-title-underlay").text("AI & NEW TECHNOLOGIES");
-			$(".section-subTitle-underlay").text("Are you using them?");
+			$(".section-subTitle-underlay").text("Will technology replace them?");
 			$(".section-detail-underlay").text(
 				"The human-computer interaction is being influenced by AI and other emerging technologies. With AI's introduction, search behavior has been altered, and we may gradually observe a reduction in the use of magnifier icons. Similarly, highlighted icons may also be at risk of losing their functionality to advanced technologies such as voice control and AI."
 			);
