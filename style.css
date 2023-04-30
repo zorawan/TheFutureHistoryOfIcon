@@ -40,7 +40,12 @@ h3 {
 	text-align: center;
 	margin: 0 2em;
 }
-
+#headTitle {
+	line-height: 1em;
+	margin: 0 1.7em;
+	text-align: left;
+	color: #383e21;
+}
 h4 {
 	font-size: 1em;
 	text-align: center;
@@ -413,17 +418,18 @@ canvas {
 }
 .quote {
 	text-align: left;
+	font-size: 4em;
 	line-height: 1.5em;
-	margin-bottom: 3em;
 	color: #383e21;
 }
 #quote1 {
 	transform: rotate(10.63deg);
-	margin-top: 2em;
+	margin-top: 3em;
+	margin-left: 5em;
 }
 #quote2 {
 	transform: rotate(-7.8deg);
-	margin: 2.5em 0 6em 6em;
+	margin: 0.5em 0 0 4em;
 }
 #quoteBG {
 	background-image: url("listIcons/quote_bg.svg");
@@ -432,9 +438,10 @@ canvas {
 
 .quote-invert {
 	text-align: left;
+	font-size: 4em;
 	line-height: 1.5em;
-	margin: 2em 0 1em 0;
-	padding: 2em 1em 3em 4em;
+
+	padding: 2em 4em 3em 1em;
 	color: #dbff00;
 }
 .text-wrapper {
@@ -622,4 +629,11 @@ button:active {
 	border-radius: 12px;
 	transform: translateY(4px);
 	box-shadow: 1px 1px 0px #05171b;
+}
+#include {
+	display: flex;
+}
+#include img {
+	padding: 0;
+	margin-left: auto;
 }

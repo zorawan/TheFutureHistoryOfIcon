@@ -341,7 +341,7 @@ $(document).ready(function () {
 	var compensation = 100;
 	// var compensation = $(window).height() / 2;
 	// calculate where the sections start
-	var second = $(".second").offset().top - compensation + 100;
+	var second = $(".second").offset().top - compensation;
 	var third = $(".third").offset().top - compensation;
 	var fourth = $(".fourth").offset().top - compensation;
 	var footer = $(".footer").offset().top - compensation;
@@ -366,8 +366,8 @@ $(document).ready(function () {
 			});
 			currentStatus = "uni";
 		} else if (scrollPos >= third && scrollPos < fourth) {
-			$(".section-title-underlay").text("SKEUOMORPHISM");
-			$(".section-subTitle-underlay").text("Do we still use them?");
+			$(".section-title-underlay").text("EVERYDAY OBJECTS");
+			$(".section-subTitle-underlay").text("Are they still common?");
 			$(".section-detail-underlay").text(
 				"The highlighted icons possess a common feature, namely, representing everyday objects. However, if people fail to recognize these representations, the icons could lose both their significance and practical usefulness."
 			);
