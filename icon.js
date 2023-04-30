@@ -128,7 +128,7 @@ class Particle {
 function setup() {
 	frameRate(30);
 	canvas = document.getElementById("myCanvas");
-	rander = createCanvas(window.innerWidth, 600);
+	rander = createCanvas(window.innerWidth, 400);
 	rander.parent("canvas-container");
 	colorMode(HSL);
 	noStroke();
@@ -152,10 +152,10 @@ function draw() {
 	background("#f7f7f7");
 	updating();
 	drawParticles();
-	fill("#05171b");
-	textFont("Nunito", [60]);
-	textStyle(BOLD);
-	text("The Future History Of", window.innerWidth / 2 - 300, 200);
+	// fill("#05171b");
+	// textFont("Nunito", [60]);
+	// textStyle(BOLD);
+	// text("The Future History Of", window.innerWidth / 2 - 300, 200);
 }
 
 function mouseDragged() {}
