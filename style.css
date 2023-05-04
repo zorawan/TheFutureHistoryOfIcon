@@ -3,6 +3,7 @@ body {
 	/* font-family: "Mulish", sans-serif; */
 	background-color: #f7f7f7;
 	color: #05171b;
+	cursor: pointer;
 }
 
 #canvas-container {
@@ -28,10 +29,6 @@ h2 {
 #highlight_content {
 	font-weight: 800;
 	text-transform: uppercase;
-	/* text-decoration: underline;
-	text-decoration-color: #dbff00;
-	text-decoration-thickness: 6px;
-	text-decoration-skip-ink: none; */
 }
 h3 {
 	font-size: 3em;
@@ -44,7 +41,7 @@ h3 {
 	line-height: 1em;
 	margin: 0 1.7em;
 	text-align: left;
-	color: #383e21;
+	color: #05171b;
 }
 h4 {
 	font-size: 1em;
@@ -420,12 +417,12 @@ canvas {
 	text-align: left;
 	font-size: 4em;
 	line-height: 1.5em;
-	color: #383e21;
+	color: #21383e;
 }
 #quote1 {
 	transform: rotate(10.63deg);
 	margin-top: 3em;
-	margin-left: 5em;
+	margin-left: 3em;
 }
 #quote2 {
 	transform: rotate(-7.8deg);

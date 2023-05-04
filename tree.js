@@ -68,7 +68,7 @@ var treelist = [
 	{
 		id: "icon_phone",
 		regex: /phone|call|call back/,
-		title: "Notification",
+		title: "Phone Callback",
 		imgUrl: "listIcons/phone.svg",
 	},
 	{
