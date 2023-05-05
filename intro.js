@@ -202,7 +202,7 @@ var descArray = [
 	},
 	{
 		name: "Hourglass",
-		desc: "The hourglass symbolizes waiting and loading, but it has been replaced by other arbitrary icons (Jakob Nielsen), like spinning circles and progress bars, which I think is more related to the ideogram from Six Methods of forming Chinese characters. The physical object has also become less commonly seen, replaced by digital interfaces.",
+		desc: "While the hourglass symbolizes waiting and loading, it has been supplanted by other arbitrary icons, such as spinning circles and progress bars, as noted by Jakob Nielsen. Additionally, the physical hourglass object has become less common in modern times.",
 		alt: "hourGlass",
 	},
 	{
@@ -212,7 +212,7 @@ var descArray = [
 	},
 	{
 		name: "Share",
-		desc: "The share iconography world is divided. Many share icons are based on device and platform, including this one from Android. Whatever share icon we use today can easily be replaced by voice control or gesture interaction. We are stuck with so many different share icons right now, representing that there is no suitable design to stand the test of time",
+		desc: "The shape of share icons are based on device and platform, including this one from Android. Whichever we use today can easily be replaced by voice control or gesture interaction. We are stuck with so many different share icons right now, representing that there is no suitable design to stand the test of time.",
 		alt: "share",
 	},
 	{
@@ -222,7 +222,7 @@ var descArray = [
 	},
 	{
 		name: "Power",
-		desc: "As more digital devices are left on all the time, the power icon may become less necessary. Why do we need a power icon to turn on/off for things?",
+		desc: "As more digital devices are left on all the time, the power icon may become less necessary. Why do we need a power icon to turn on/off things?",
 		alt: "power",
 	},
 	{
@@ -237,7 +237,7 @@ var descArray = [
 	},
 	{
 		name: "Attach Files",
-		desc: "A paper clip as an object to hold the attached files is a great reference icon. However, like the share icon, it can be replaced by voice control or gesture interaction. To be smarter in online communication, attached files should be done stilly.",
+		desc: "A paper clip as an object to hold the attached files is a great reference icon. However, like the share icon, it can be replaced by voice control or gesture interaction.",
 		alt: "attachment",
 	},
 	{
@@ -247,7 +247,7 @@ var descArray = [
 	},
 	{
 		name: "Scan",
-		desc: "The scan is so popular nowadays. However, it is based on the QR code technology that will be replaced by automatic recognition. On the other hand, if scanning the QR code becomes permanent, people won't need an icon to trigger their actions. When they see a legend, they immediately know what to do.",
+		desc: "The scan is so popular nowadays. However, it is based on the QR code technology that may be replaced by automatic recognition.",
 		alt: "scan",
 	},
 	{
@@ -263,17 +263,16 @@ var descArray = [
 	{
 		name: "Desktop",
 		desc: "As tiny and powerful chips make personal and wearable devices possible, the need for desktop computers is decreasing. There is no use case for the desktop icon unless in the computer/technology museum for exhibiting computer history.",
-		Link: "The hyperlink icon, designed for clicking and linking information, may become obsolete as new, more intuitive options emerge. The majority job for the link icon is to provide a attach option for other pieces of information. The hyperlink may disappear when users use more intuitive options like a button or the object itself. This may make the link icon either lose its meaning or become extinct.",
 		alt: "desktop",
 	},
 	{
 		name: "Link",
-		desc: "The hyperlink icon, designed for clicking and linking information, may become obsolete as new, more intuitive options emerge. The majority job for the link icon is to provide a attach option for other pieces of information. The hyperlink may disappear when users use more intuitive options like a button or the object itself. This may make the link icon either lose its meaning or become extinct.",
+		desc: "The hyperlink icon was created to click and link information. Still, it may eventually become outdated as more intuitive options emerge. Alternatives like buttons or the content themselves may replace hyperlinks and make them extinct, rendering the link icon meaningless.",
 		alt: "link",
 	},
 	{
 		name: "Thermometer",
-		desc: "A thermometer is an obsolete object becoming less commonly seen in daily life. The icon is a resemblance icon (Pictograms) to represent the oldest alcohol or mercury thermometer. The digital number replaced the tube, and people read the number directly. When the object loses its function, the pictograms also forfeit its meaning.",
+		desc: "A thermometer, an object used to measure temperature, is becoming less common in daily life. By replacing the tube with digital numbers, people can read the temperature directly without relying on the object's physical features. As a result, the thermometer's pictogram is losing meaning since the object itself is becoming obsolete.",
 		alt: "thermometer",
 	},
 	{
@@ -353,9 +352,9 @@ $(document).ready(function () {
 		var scrollPos = $(document).scrollTop();
 		if (scrollPos >= second && scrollPos < third) {
 			$(".section-title-underlay").text("UNIVERSAL ICONS");
-			$(".section-subTitle-underlay").text("Are they univercial?");
+			$(".section-subTitle-underlay").text("Are they universal?");
 			$(".section-detail-underlay").text(
-				"Highlighted icons have been identified as universally recognized by most individuals across various UX/UI research sources. This widespread recognition is indicative of their sustained relevance, implying that they may continue to be in use for a longer period compared to other icons. Thus, their high level of recognition and vitality may result in an extended lifespan compared to other icons."
+				"Highlighted icons have been identified as universally recognized by most individuals across various UX/UI research sources. This widespread recognition indicates their sustained relevance and implies that they may remain in use for a longer period than other icons. Therefore, their high level of recognition and vitality may result in an extended lifespan compared to other icons."
 			);
 			$(".iconGrid").empty();
 			$(".iconGrid").css("position", "fixed");
@@ -369,7 +368,7 @@ $(document).ready(function () {
 			$(".section-title-underlay").text("EVERYDAY OBJECTS");
 			$(".section-subTitle-underlay").text("Are they still common?");
 			$(".section-detail-underlay").text(
-				"The highlighted icons possess a common feature, namely, representing everyday objects. However, if people fail to recognize these representations, the icons could lose both their significance and practical usefulness."
+				"The highlighted icons share a common feature of representing everyday objects. However, their significance and practical usefulness may be lost if people fail to recognize these representations. In other words, the recognition of these icons is critical to their continued effectiveness."
 			);
 			$(".iconGrid").empty();
 			$(".iconGrid").css("position", "fixed");

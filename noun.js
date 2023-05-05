@@ -227,9 +227,7 @@ function update(data) {
 		.append("text")
 		.attr("x", 200 - 6)
 		.attr("y", chartHeight + margin.top + 100)
-		.text(
-			"*The number is based on the time we studied this icon set in The Noun Project."
-		)
+		.text("*The number is based on the time we studied this icon set.")
 		.style("font-size", "15px")
 		.style("fill", "#9FA9AB")
 		.attr("alignment-baseline", "middle");
