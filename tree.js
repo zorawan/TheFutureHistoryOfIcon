@@ -121,7 +121,7 @@ var treelist = [
 	},
 	{
 		id: "icon_usb",
-		regex: /usb|flash drive/,
+		regex: /usb|flash drive|save/,
 		title: "USB",
 		imgUrl: "listIcons/usb.svg",
 	},
@@ -272,18 +272,7 @@ function showTreeMap(data) {
 		.size([width, height])
 		.paddingTop(46)
 		.paddingRight(12)
-		.paddingInner(0)(
-		// Padding between each rectangle
-		//.paddingOuter(6)
-		//.padding(20)
-		root
-	);
-
-	// prepare a color scale
-	// var color = d3
-	// 	.scaleOrdinal()
-	// 	.domain(["icon_edit", "icon_profile", "icon_calendar"])
-	// 	.range(["#402D54"]);
+		.paddingInner(0)(root);
 
 	// And an opacity scale
 	var opacity = d3.scaleLinear().domain([0, 1]).range([0.5, 1]);
@@ -312,11 +301,6 @@ function showTreeMap(data) {
 		})
 		// .style("stroke", "#383E21")
 		.style("stroke-width", 0);
-	// .style("opacity", function (d) {
-	// 	return opacity(d.data.value / d.data.total);
-	// .style("opacity", function (d) {
-	// 	return opacity(d.data.value / d.data.total);
-	// });
 
 	// and to add the text labels
 	svg

@@ -1,8 +1,8 @@
 // Data for the chart
 
-var data1 = [
+var nounProject = [
 	{ name: "Printer", count: 10395 },
-	{ name: "Notification", count: 22829 },
+	{ name: "Notification", count: 22835 },
 	{ name: "Bookmark", count: 14523 },
 	{ name: "Share", count: 23180 },
 	{ name: "Image", count: 26750 },
@@ -30,10 +30,10 @@ var data1 = [
 	{ name: "More", count: 10511 },
 	{ name: "Accessibility", count: 1251 },
 	{ name: "Bluetooth", count: 3555 },
-	{ name: "Settings", count: 32227 },
+	{ name: "Settings", count: 32236 },
 ];
 
-var data2 = [
+var iconScout = [
 	{ name: "Printer", count: 11600 },
 	{ name: "Notification", count: 21124 },
 	{ name: "Bookmark", count: 12726 },
@@ -327,7 +327,7 @@ function update(data) {
 		});
 }
 // Initialize the plot with the first dataset
-update(data1);
+update(nounProject);
 document.getElementById("myButton").addEventListener("onclick", function () {
 	document.getElementById("myButton").classList.add("clicked");
 });
