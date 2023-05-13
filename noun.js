@@ -327,7 +327,7 @@ function update(data) {
 		});
 }
 // Initialize the plot with the first dataset
-update(nounProject);
+update(iconScout);
 document.getElementById("myButton").addEventListener("onclick", function () {
 	document.getElementById("myButton").classList.add("clicked");
 });
