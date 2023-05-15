@@ -55,7 +55,7 @@
 // 	}
 // 	pop();
 // }
-const fontSize = 70,
+const fontSize = 80,
 	scaleRate = 6,
 	message = "ICONS。",
 	inpactRange = 120;
@@ -128,7 +128,7 @@ class Particle {
 function setup() {
 	frameRate(30);
 	canvas = document.getElementById("myCanvas");
-	rander = createCanvas(window.innerWidth, 400);
+	rander = createCanvas(window.innerWidth, 420);
 	rander.parent("canvas-container");
 	colorMode(HSL);
 	noStroke();

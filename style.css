@@ -415,30 +415,31 @@ canvas {
 }
 .quote {
 	text-align: left;
-	font-size: 4em;
+	font-size: 5em;
 	line-height: 1.5em;
 	color: #21383e;
 }
 #quote1 {
 	transform: rotate(10.63deg);
-	margin-top: 3em;
+	margin-top: 4em;
 	margin-left: 3em;
 }
 #quote2 {
 	transform: rotate(-7.8deg);
-	margin: 0.5em 0 0 4em;
+	margin: 0 0 2em 6em;
 }
 #quoteBG {
 	background-image: url("listIcons/quote_bg.svg");
 	background-repeat: no-repeat;
+	/* background-position: center top; */
+	background-size: 100% auto;
 }
 
 .quote-invert {
 	text-align: left;
-	font-size: 4em;
+	font-size: 5em;
 	line-height: 1.5em;
-
-	padding: 2em 4em 3em 1em;
+	padding: 3em 3em 1em 1em;
 	color: #dbff00;
 }
 .text-wrapper {
@@ -495,6 +496,7 @@ canvas {
 	height: auto;
 	background-image: url("listIcons/list_bg.svg");
 	background-repeat: no-repeat;
+	background-size: 100% auto;
 }
 .timeline ul li {
 	list-style-type: none;
@@ -594,6 +596,7 @@ canvas {
 #wave {
 	background-image: url("listIcons/wave_bg.svg");
 	background-repeat: no-repeat;
+	margin-left: 100em;
 }
 .filter-green {
 	filter: invert(90%) sepia(10%) saturate(735%) hue-rotate(50deg)
