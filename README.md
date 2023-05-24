@@ -7,9 +7,9 @@ Supporting Data Sources: The Noun Project | Icon Scout <br>
 
 -------------------------------------------------------------
 
-## :brain:Brainstorming
-
-## Survey
-## Data Cleaning
-## Visualization
-## Outcome
+## :brain: Brainstorming
+![All the ideation sketchs](https://myoctocat.com/assets/images/base-octocat.svg)
+## :page_facing_up: Survey
+## :broom: Data Cleaning
+## :bar_chart: Visualization
+## :star2: Outcome
