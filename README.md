@@ -7,7 +7,8 @@ Supporting Data Sources: The Noun Project | Icon Scout <br>
 
 -------------------------------------------------------------
 
-## Brainstoming
+## :brain:Brainstorming
+
 ## Survey
 ## Data Cleaning
 ## Visualization
