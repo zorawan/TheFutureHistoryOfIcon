@@ -8,7 +8,7 @@ Supporting Data Sources: The Noun Project | Icon Scout <br>
 -------------------------------------------------------------
 
 ## :brain: Brainstorming
-![All the ideation sketchs](https://myoctocat.com/assets/images/base-octocat.svg)
+![All the ideation sketchs]([https://myoctocat.com/assets/images/base-octocat.svg](https://github.com/zorawan/TheFutureHistoryOfIcon/blob/master/Brainstorming.png))
 ## :page_facing_up: Survey
 ## :broom: Data Cleaning
 ## :bar_chart: Visualization
