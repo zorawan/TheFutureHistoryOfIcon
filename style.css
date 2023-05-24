@@ -3,7 +3,7 @@ body {
 	/* font-family: "Mulish", sans-serif; */
 	background-color: #f7f7f7;
 	color: #05171b;
-	cursor: pointer;
+	/* cursor: pointer; */
 }
 
 #canvas-container {
