@@ -10,9 +10,9 @@ Supporting Data Sources: The Noun Project | Icon Scout <br>
 ## :brain: Brainstorming
 ![All the ideation sketchs](Brainstorming.png)
 ## :page_facing_up: Survey
-Two surveies sent out through many online platforms including: Facebook, Linkedin, Whatsapp, Line, and Wechart:
-Survey1 with 17 icons: https://forms.gle/iGj4i5PfDR9LKB5j8
-Survey2 with 13 icons: https://forms.gle/zn11VP3n3Q1SvPd67
+Two surveies sent out through many online platforms including: Facebook, Linkedin, Whatsapp, Line, and Wechart:<br>
+Survey1 with 17 icons: https://forms.gle/iGj4i5PfDR9LKB5j8 <br>
+Survey2 with 13 icons: https://forms.gle/zn11VP3n3Q1SvPd67 <br>
 
 ## :broom: Data Cleaning
 ## :bar_chart: Visualization
