@@ -28,11 +28,11 @@ Data cleaning steps:<br>
 ## :bar_chart: Visualization
 
 Recognition Testing - survey data <br>
-![visualization1 wireframe-circlePack1](wires/circlePack_wire1.svg)
- <img src="wires/circlePack_wire1.svg" alt="visualization1 wireframe-circlePack1" width="200" height="200" align="right"/>
-![visualization1 wireframe-circlePack2](wires/circlePack_wire2.svg)
-![visualization1 wireframe-treemap1](wires/treemap_wire1.svg)
-![visualization1 wireframe-treemap2](wires/treemap_wire2.svg)
+ <img src="wires/circlePack_wire1.svg" alt="visualization1 wireframe-circlePack1" width="200" height="200" align="center"/>
+ <img src="wires/circlePack_wire2.svg" alt="visualization1 wireframe-circlePack2" width="200" height="200" align="center"/>
+ <img src="wires/treemap_wire1.svg" alt="visualization2 wireframe-treemap1" width="200" height="200" align="center"/>
+  <img src="wires/treemap_wire2.svg" alt="visualization2 wireframe-treemap2" width="200" height="200" align="center"/>
+
 ![visualization1 wireframe-barChart1](wires/barchart_wire1.svg)
 ![visualization1 wireframe-barChart2](wires/barchart_wire2.svg)
 <!--
