@@ -26,13 +26,15 @@ Data cleaning steps:<br>
 6. Lastly, I checked the data consistency, such as formatting all words with capitalized first letters to ensure the data could be used for future data processing and visualization.
 
 ## :bar_chart: Visualization
-<!--
-Recognition Testing - survey data
-![visualization1 wireframe-circlePack1](circlePack_wire1.svg)
-![visualization1 wireframe-circlePack2](circlePack_wire2.svg)
-![visualization1 wireframe-treemap](treemap_wire.svg)
-![visualization1 wireframe-barChart](barchart_wire.svg)
 
+Recognition Testing - survey data
+![visualization1 wireframe-circlePack1](wires/circlePack_wire1.svg)
+![visualization1 wireframe-circlePack2](wires/circlePack_wire2.svg)
+![visualization1 wireframe-treemap1](wires/treemap_wire1.svg)
+![visualization1 wireframe-treemap2](wires/treemap_wire12.svg)
+![visualization1 wireframe-barChart1](wires/barchart_wire1.svg)
+![visualization1 wireframe-barChart2](wires/barchart_wire2.svg)
+<!--
 ## :star2: Outcome
 ![Final Outcome for icon-folder](final_card_folder.svg)
 -->
