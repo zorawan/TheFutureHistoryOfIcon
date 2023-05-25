@@ -28,14 +28,14 @@ Data cleaning steps:<br>
 ## :bar_chart: Visualization
 
 Recognition Testing - survey data <br><br>
- <img src="wires/circlePack_wire1.svg" alt="visualization1 wireframe-circlePack1" width="200" height="200" align="center"/>
- <img src="wires/circlePack_wire2.svg" alt="visualization1 wireframe-circlePack2" width="200" height="200" align="center"/>
- <br>
- <img src="wires/treemap_wire1.svg" alt="visualization2 wireframe-treemap1" width="200" height="200" align="center"/>
- <img src="wires/treemap_wire2.svg" alt="visualization2 wireframe-treemap2" width="200" height="200" align="center"/>
- <br>
- <img src="wires/barchart_wire1.svg" alt="visualization3 wireframe-barChart1" width="200" height="200" align="center"/>
- <img src="wires/barchart_wire2.svg" alt="visualization3 wireframe-barChart2" width="200" height="200" align="center"/>
+ <img src="wires/circlePack_wire1.svg" alt="visualization1 wireframe-circlePack1" width="100" height="100" align="left"/>
+ <img src="wires/circlePack_wire2.svg" alt="visualization1 wireframe-circlePack2" width="100" height="100" align="left"/>
+
+ <img src="wires/treemap_wire1.svg" alt="visualization2 wireframe-treemap1" width="100" height="100" align="left"/>
+ <img src="wires/treemap_wire2.svg" alt="visualization2 wireframe-treemap2" width="100" height="100" align="left"/>
+
+ <img src="wires/barchart_wire1.svg" alt="visualization3 wireframe-barChart1" width="100" height="100" align="left"/>
+ <img src="wires/barchart_wire2.svg" alt="visualization3 wireframe-barChart2" width="100" height="100" align="left"/>
 <!--
 ## :star2: Outcome
 ![Final Outcome for icon-folder](final_card_folder.svg)
