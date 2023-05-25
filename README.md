@@ -26,13 +26,17 @@ Data cleaning steps:<br>
 6. Lastly, I checked the data consistency, such as formatting all words with capitalized first letters to ensure the data could be used for future data processing and visualization.
 
 ## :bar_chart: Visualization
-<!--
-Recognition Testing - survey data
-![visualization1 wireframe-circlePack1](circlePack_wire1.svg)
-![visualization1 wireframe-circlePack2](circlePack_wire2.svg)
-![visualization1 wireframe-treemap](treemap_wire.svg)
-![visualization1 wireframe-barChart](barchart_wire.svg)
 
+Recognition Testing - survey data <br><br>
+ <img src="wires/circlePack_wire1.svg" alt="visualization1 wireframe-circlePack1" width="100" height="100" align="left"/>
+ <img src="wires/circlePack_wire2.svg" alt="visualization1 wireframe-circlePack2" width="100" height="100" align="left"/>
+
+ <img src="wires/treemap_wire1.svg" alt="visualization2 wireframe-treemap1" width="100" height="100" align="left"/>
+ <img src="wires/treemap_wire2.svg" alt="visualization2 wireframe-treemap2" width="100" height="100" align="left"/>
+
+ <img src="wires/barchart_wire1.svg" alt="visualization3 wireframe-barChart1" width="100" height="100" align="left"/>
+ <img src="wires/barchart_wire2.svg" alt="visualization3 wireframe-barChart2" width="100" height="100" align="left"/>
+<!--
 ## :star2: Outcome
 ![Final Outcome for icon-folder](final_card_folder.svg)
 -->
