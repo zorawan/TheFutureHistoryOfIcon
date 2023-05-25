@@ -31,10 +31,9 @@ Recognition Testing - survey data <br>
  <img src="wires/circlePack_wire1.svg" alt="visualization1 wireframe-circlePack1" width="200" height="200" align="center"/>
  <img src="wires/circlePack_wire2.svg" alt="visualization1 wireframe-circlePack2" width="200" height="200" align="center"/>
  <img src="wires/treemap_wire1.svg" alt="visualization2 wireframe-treemap1" width="200" height="200" align="center"/>
-  <img src="wires/treemap_wire2.svg" alt="visualization2 wireframe-treemap2" width="200" height="200" align="center"/>
-
-![visualization1 wireframe-barChart1](wires/barchart_wire1.svg)
-![visualization1 wireframe-barChart2](wires/barchart_wire2.svg)
+ <img src="wires/treemap_wire2.svg" alt="visualization2 wireframe-treemap2" width="200" height="200" align="center"/>
+ <img src="wires/barchart_wire1.svg" alt="visualization3 wireframe-barChart1" width="200" height="200" align="center"/>
+ <img src="wires/barchart_wire2.svg" alt="visualization3 wireframe-barChart2" width="200" height="200" align="center"/>
 <!--
 ## :star2: Outcome
 ![Final Outcome for icon-folder](final_card_folder.svg)
