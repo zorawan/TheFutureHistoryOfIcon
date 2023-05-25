@@ -27,7 +27,7 @@ Data cleaning steps:<br>
 
 ## :bar_chart: Visualization
 
-Recognition Testing - survey data <br>
+Recognition Testing - survey data <br><br>
  <img src="wires/circlePack_wire1.svg" alt="visualization1 wireframe-circlePack1" width="200" height="200" align="center"/>
  <img src="wires/circlePack_wire2.svg" alt="visualization1 wireframe-circlePack2" width="200" height="200" align="center"/>
  <br>
