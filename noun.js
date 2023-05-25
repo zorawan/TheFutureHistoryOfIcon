@@ -227,19 +227,12 @@ function update(data) {
 		.append("text")
 		.attr("x", 200 - 6)
 		.attr("y", chartHeight + margin.top + 100)
-		.text("*The number is based on the time we studied this icon set.")
+		.text(
+			"*The value is derived from the period when we examined the icon set on May 10th."
+		)
 		.style("font-size", "15px")
 		.style("fill", "#9FA9AB")
 		.attr("alignment-baseline", "middle");
-
-	// // Add title
-	// svg
-	// 	.append("text")
-	// 	.attr("x", 0)
-	// 	.attr("y", 14)
-	// 	.text("The Noun Project")
-	// 	.attr("font-size", "19px")
-	// 	.attr("fill", "grey");
 
 	// Add the tooltip to the chart
 	var tooltip = d3

@@ -1,5 +1,5 @@
 let width = window.innerWidth;
-let height = 2600;
+let height = 2000;
 let iconHeight = 36;
 let margins = { top: 100, right: 100, bottom: 100, left: 100 };
 let totalWidth = width;
