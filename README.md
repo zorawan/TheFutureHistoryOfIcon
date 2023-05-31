@@ -31,7 +31,7 @@ Data cleaning steps:<br>
 Survey data using circular packing <br>
  <img src="wires/circlePack_wire1.svg" alt="visualization1 wireframe-circlePack1" width="100" height="100" align="left"/>
  <img src="wires/circlePack_wire2.svg" alt="visualization1 wireframe-circlePack2" width="100" height="100" align="left"/>
- <br><br>
+ <br><br><br><br>
 
 Survey data devided by age groups using tree map <br>
 
