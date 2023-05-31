@@ -27,9 +27,10 @@ Data cleaning steps:<br>
 
 ## :bar_chart: Visualization
 
-Recognition Testing<br><br>
+#### Recognition Testing
 Survey data using circular packing <br>
 Survey data devided by age groups using tree map <br>
+#### Icon Creation
 Icon creation from open source libraries by bar chart <br>
  <img src="wires/circlePack_wire1.svg" alt="visualization1 wireframe-circlePack1" width="100" height="100" align="left"/>
  <img src="wires/circlePack_wire2.svg" alt="visualization1 wireframe-circlePack2" width="100" height="100" align="left"/>
