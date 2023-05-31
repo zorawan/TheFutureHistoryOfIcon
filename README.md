@@ -29,14 +29,16 @@ Data cleaning steps:<br>
 
 #### Recognition Testing
 Survey data using circular packing <br>
-Survey data devided by age groups using tree map <br>
-#### Icon Creation
-Icon creation from open source libraries by bar chart <br>
  <img src="wires/circlePack_wire1.svg" alt="visualization1 wireframe-circlePack1" width="100" height="100" align="left"/>
  <img src="wires/circlePack_wire2.svg" alt="visualization1 wireframe-circlePack2" width="100" height="100" align="left"/>
+ <br>
+Survey data devided by age groups using tree map <br>
 
  <img src="wires/treemap_wire1.svg" alt="visualization2 wireframe-treemap1" width="100" height="100" align="left"/>
  <img src="wires/treemap_wire2.svg" alt="visualization2 wireframe-treemap2" width="100" height="100" align="left"/>
+ 
+#### Icon Creation
+Icon creation from open source libraries by bar chart <br>
 
  <img src="wires/barchart_wire1.svg" alt="visualization3 wireframe-barChart1" width="100" height="100" align="left"/>
  <img src="wires/barchart_wire2.svg" alt="visualization3 wireframe-barChart2" width="100" height="100" align="left"/>
