@@ -37,7 +37,7 @@ Survey data devided by age groups using tree map <br>
 
  <img src="wires/treemap_wire1.svg" alt="visualization2 wireframe-treemap1" width="100" height="100" align="left"/>
  <img src="wires/treemap_wire2.svg" alt="visualization2 wireframe-treemap2" width="100" height="100" align="left"/>
- <br><br>
+ <br><br><br><br>
  
 #### Icon Creation
 Icon creation from open source libraries by bar chart <br>
