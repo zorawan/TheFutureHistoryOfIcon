@@ -36,7 +36,6 @@ h3 {
 	line-height: 3em;
 	font-weight: 1000;
 	text-align: center;
-	margin: 0 2em;
 }
 #headTitle {
 	line-height: 1em;
@@ -423,10 +422,12 @@ canvas {
 #quote1 {
 	transform: rotate(10.63deg);
 	padding:2em 1em 0 1em;
+	margin: 0 2em;
 }
 #quote2 {
 	transform: rotate(-7.8deg);
 	padding:0 1em 1em 1em;
+	margin: 0 2em;
 }
 #quoteBG {
 	background-image: url("listIcons/quote_bg.svg");
@@ -439,6 +440,7 @@ canvas {
 .quote-invert {
 	line-height: 8em;
 	color: #dbff00;
+	text-shadow: -1px -1px 0 #21383e, 1px -1px 0 #21383e, -1px 1px 0 #21383e, 1px 1px 0 #21383e;
 }
 .quote_span
 {
@@ -447,6 +449,7 @@ canvas {
   vertical-align: middle;
   font-size: 3em;
   line-height: 1em; /* <-- adjust this */
+  margin: 0 2em;
 }
 
 .text-wrapper {
