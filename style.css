@@ -104,7 +104,8 @@ p {
 	text-align: left;
 	margin: 0;
 	line-height: 1em;
-	color: #879631;
+	color: #dbff00;
+	text-shadow: -1px -1px 0 #21383e, 1px -1px 0 #21383e, -1px 1px 0 #21383e, 1px 1px 0 #21383e;
 }
 .tag p {
 	font-size: 1em;
