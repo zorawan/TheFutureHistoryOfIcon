@@ -30,6 +30,7 @@ h2 {
 	font-weight: 800;
 	text-transform: uppercase;
 }
+
 h3 {
 	font-size: 3em;
 	line-height: 3em;
@@ -415,33 +416,39 @@ canvas {
 }
 .quote {
 	text-align: left;
-	font-size: 5em;
+	font-size: 3em;
 	line-height: 1.5em;
 	color: #21383e;
 }
 #quote1 {
 	transform: rotate(10.63deg);
-	margin-top: 4em;
-	margin-left: 3em;
+	padding:2em 1em 0 1em;
 }
 #quote2 {
 	transform: rotate(-7.8deg);
-	margin: 0 0 2em 6em;
+	padding:0 1em 1em 1em;
 }
 #quoteBG {
 	background-image: url("listIcons/quote_bg.svg");
 	background-repeat: no-repeat;
 	/* background-position: center top; */
-	background-size: 100% auto;
+	background-size: cover;
+	padding: 5em 3em 5em 3em;
 }
 
 .quote-invert {
-	text-align: left;
-	font-size: 5em;
-	line-height: 1.5em;
-	padding: 3em 3em 1em 1em;
+	line-height: 8em;
 	color: #dbff00;
 }
+.quote_span
+{
+	text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 3em;
+  line-height: 1em; /* <-- adjust this */
+}
+
 .text-wrapper {
 	overflow: hidden;
 	margin-top: 4em;
@@ -599,7 +606,7 @@ canvas {
 	margin-left: 100em;
 }
 .filter-green {
-	filter: invert(90%) sepia(10%) saturate(735%) hue-rotate(50deg)
+	filter: invert(90%) sepia(90%) saturate(735%) hue-rotate(20deg)
 		brightness(100%) contrast(100%);
 }
 .btContainer {
