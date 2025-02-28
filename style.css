@@ -423,11 +423,13 @@ canvas {
 	transform: rotate(10.63deg);
 	padding:2em 1em 0 1em;
 	margin: 0 2em;
+	text-shadow: -1px -1px 0 #dbff00, 1px -1px 0 #dbff00, -1px 1px 0 #dbff00, 1px 1px 0 #dbff00;
 }
 #quote2 {
 	transform: rotate(-7.8deg);
 	padding:0 1em 1em 1em;
 	margin: 0 2em;
+	text-shadow: -1px -1px 0 #dbff00, 1px -1px 0 #dbff00, -1px 1px 0 #dbff00, 1px 1px 0 #dbff00;
 }
 #quoteBG {
 	background-image: url("listIcons/quote_bg.svg");
